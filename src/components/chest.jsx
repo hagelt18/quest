@@ -1,6 +1,6 @@
 import React from 'react';
 
-const chestGif = require('../assets/images/chest3d.gif');
+// const chestGif = require('../assets/images/chest3d.gif');
 
 export default () => {
     return (
