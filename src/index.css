@@ -1,3 +1,12 @@
+/* @font-face {
+  font-family: 'QuestFont';
+  src: local('QuestFont'), url(./fonts/EnchantedLand.otf) format('otf');
+} */
+@font-face {
+  font-family: 'QuestFont';
+  src: local('QuestFont'), url(./assets/fonts/Cardinal.ttf) format('truetype');
+}
+
 body {
   margin: 2;
   background-color: #282c34;
@@ -7,4 +16,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 18px;
+}
+
+button {
+  background-color: palegoldenrod;
+  color: #382807;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: QuestFont;
+}
+
+.center {
+  text-align: center;
 }
