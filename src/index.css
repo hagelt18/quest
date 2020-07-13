@@ -33,3 +33,14 @@ button {
 .center {
   text-align: center;
 }
+
+
+.Help-Chat #message_body {
+  background-color: white !important;
+  
+}
+
+
+textarea#message_body.message-input {
+  background-color: white !important;
+}
