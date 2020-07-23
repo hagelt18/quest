@@ -6,7 +6,7 @@ export default () => {
     return (
         <div>
             {/* <img src={chestGif} alt="chest" /> */}
-            <img src="https://i.imgur.com/ldUxcEN.gif" alt="chest" />
+            <img style={{ width: '48px', height: '48px' }} src="https://i.imgur.com/ldUxcEN.gif" alt="chest" />
         </div>
     )
 }

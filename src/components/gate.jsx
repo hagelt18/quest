@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { loadData, saveName } from '../common/save-data';
 
 export default (props) => {
 
@@ -6,7 +7,8 @@ export default (props) => {
   const [confirmed, setConfirmed] = useState(null);
 
   useEffect(() => {
-    const nameInStorage = window.localStorage.getItem('name', name);
+    const currentSaveData = loadData();
+    const nameInStorage = currentSaveData.name;
     if (nameInStorage) {
       if (isTrueHero(nameInStorage)) {
         setName(nameInStorage);
@@ -28,7 +30,7 @@ export default (props) => {
 
   const onNameSubmit = (e) => {
     if (isTrueHero(name)) {
-      window.localStorage.setItem('name', name);
+      saveName(name);
       setConfirmed(true);
     } else {
       setConfirmed(false);

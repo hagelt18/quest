@@ -1,15 +1,20 @@
 import React from 'react';
-import Chest from '../components/chest';
+import { Link } from 'react-router-dom';
 import './home.css';
+import QuestInfo from '../components/quest-info';
+import clues from '../assets/data/clues';
 
 function Home() {
   return (
-    <div className="Home">
-      <Chest />
+    <div className="Home Page">
       <p>
         Welcome adventurer! Prepare to embark on a thrilling journey beyond your wildest dreams.
+        An Evil Wizard has captured the Prince and holds him captive at the top of a great tower.
+        It is up to you to find the legendary power crystals and use them to defeat the Wizard and save the Prince!
       </p>
-    </div>
+      <QuestInfo />
+      <Link to={`/clue/${clues[0].id}`}><button className='center' style={{ marginTop: '48px' }}>Start</button></Link>
+    </div >
   );
 }
 
