@@ -8,8 +8,6 @@ export default ({ length, onChange }) => {
     const inputs = [];
     const refs = [];
 
-
-
     const inputValueChanged = (i, value) => {
         let newText = fullText || '';
         if (!newText.length < length) {
@@ -18,38 +16,42 @@ export default ({ length, onChange }) => {
         const chars = [...newText];
         chars[i] = value;
         newText = chars.join('');
-        setFullText(newText)
-        onChange(newText);
+        setFullText(newText.trim())
+        onChange(newText.trim());
 
         if (value) {
             var nextControl = refs[i + 1];
             if (nextControl) {
                 nextControl.focus();
+                nextControl.select();
             }
         }
-        else {
-            // if ((i - 1) >= 0) {
-            //     var previousControl = refs[i - 1];
-            //     if (previousControl) {
-            //         previousControl.focus();
-            //     }
-            // }
-        }
-
     }
 
     for (var i = 0; i < length; i++) {
         const onChangeHandler = ix => e => {
             inputValueChanged(ix, e.target.value)
         };
+
+        let backspacePressed = false;
         const onInputKeyDown = ix => e => {
             if (e.keyCode === 8) {
-                if (!refs[ix].value && (ix - 1) >= 0) {
-                    var previousInput = refs[ix - 1];
-                    previousInput.focus();
-                    previousInput.value = '';
-                    inputValueChanged(ix - 1, '');
+                // Only run this code once while the backspace key is down
+                if (!backspacePressed) {
+                    backspacePressed = true;
+                    // If this input has no value, delete the value of the input before it.
+                    if (!refs[ix].value && (ix - 1) >= 0) {
+                        var previousInput = refs[ix - 1];
+                        previousInput.focus();
+                        previousInput.value = '';
+                        inputValueChanged(ix - 1, '');
+                    }
                 }
+            }
+        }
+        const onInputKeyUp = e => {
+            if (e.keyCode === 8) {
+                backspacePressed = false;
             }
         }
         const refSetter = (ref) => {
@@ -63,7 +65,8 @@ export default ({ length, onChange }) => {
                     type="text"
                     maxLength={1}
                     onChange={onChangeHandler(i)}
-                    onKeyUp={onInputKeyDown(i)}
+                    onKeyDown={onInputKeyDown(i)}
+                    onKeyUp={onInputKeyUp}
                     ref={refSetter}
                 />
             </span>
