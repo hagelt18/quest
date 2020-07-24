@@ -9,8 +9,8 @@ const clues = [
   {
     id: 'eb8dd419-2569-4dde-b13b-1e31134184d4',
     type: 'basic',
-    question: 'Travel to the nearest Temple of the Moose. There you will find a clue to the whereabouts of the first Power Crystal',
-    answer: '795012341234',
+    question: 'Travel to the nearest Black Bean Temple. There you will find a clue to the whereabouts of the first Power Crystal. Word around town is that you may even find something there to increase your stamina.',
+    answers: ['7950'],
     webQuestion: true,
     webAnswer: true
   }

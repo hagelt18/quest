@@ -4,17 +4,31 @@ import AnswerField from './AnswerField';
 
 export default ({ clueData }) => {
 
-  const [answer, setAnswer] = useState();
+  const [answers, setAnswers] = useState([]);
   const [confirmed, setConfirmed] = useState(null);
 
 
-  const onAnswerChange = (value) => {
+  const onAnswerChange = index => (value) => {
     // setAnswer(e.target.value);
-    setAnswer(value);
+    var newAnswers = [...answers];
+    newAnswers[index] = value;
+    setAnswers(newAnswers);
   }
 
-  const confirmAnswer = () => {
-    const correct = clueData.answer === answer
+  const confirmAnswers = () => {
+    var correct = true;
+    for (let i = 0; i < clueData.answers.length; i++) {
+      if (!answers[i]) {
+        // Answer missing
+        correct = false;
+        break;
+      }
+      if (clueData.answers[i].toLowerCase() !== answers[i].toLowerCase()) {
+        // Answer incorrect
+        correct = false;
+        break;
+      }
+    }
     setConfirmed(correct);
   }
 
@@ -26,13 +40,16 @@ export default ({ clueData }) => {
       {clueData.webAnswer && (
         <div>
           {/* <input type="text" onChange={onAnswerChange} /> */}
-          <AnswerField length={clueData.answer.length} onChange={onAnswerChange} />
+          {clueData.answers.map((a, index) =>
+            <AnswerField length={clueData.answers[index].length} onChange={onAnswerChange(index)} />
+          )}
           <br />
-          {answer}
-          <button onClick={confirmAnswer}>Submit</button>
+          {answers.map(a => <div>{a}</div>)}
+          {!confirmed && <button onClick={confirmAnswers}>Submit</button>}
+          {confirmed != null && <div>{confirmed ? 'Correct' : 'Try again!'}</div>}
+          {confirmed && <button onClick={confirmAnswers}>Next</button>}
         </div>
       )}
-      {confirmed === false && <div>Try again.</div>}
     </div>
   )
 }
