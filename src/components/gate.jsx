@@ -47,7 +47,7 @@ export default (props) => {
         <input type='test' onChange={onNameChange}></input>
         <br />
         <br />
-        <button onClick={onNameSubmit}>Enter</button>
+        <button onClick={onNameSubmit} className="primary">Enter</button>
       </div>
     );
 

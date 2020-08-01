@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 // import AnswerField from './AnswerField';
 import AnswerField from './AnswerField';
+import Hint from './hint';
+import Confetti from './Confetti';
 
 export default ({ clueData }) => {
 
   const [answers, setAnswers] = useState([]);
-  const [confirmed, setConfirmed] = useState(null);
-
+  const [confirmed, setConfirmed] = useState(clueData.answers ? null : true);
 
   const onAnswerChange = index => (value) => {
     // setAnswer(e.target.value);
@@ -32,24 +33,42 @@ export default ({ clueData }) => {
     setConfirmed(correct);
   }
 
+  const nextButtonClicked = () => {
+
+  }
+
+  const renderSubmit = () => {
+
+    const answerSubmitted = clueData.answers && confirmed != null; // If there are answers to submit, and one has been submitted (confirmed will be true or false)
+    return (
+      <>
+        {answerSubmitted && !confirmed && <div>'Try again!'</div>}
+        {!confirmed && <button onClick={confirmAnswers} className="primary">Submit</button>}
+        {confirmed && <button onClick={nextButtonClicked} className="primary">Next</button>}
+      </>
+    );
+  }
+
   return (
     <div>
-
-      {clueData.webQuestion && <p>{clueData.question}</p>}
+      {clueData.question && <p>{clueData.question}</p>}
       <br />
       {clueData.webAnswer && (
         <div>
-          {/* <input type="text" onChange={onAnswerChange} /> */}
+          <Hint hint={clueData.hint} />
           {clueData.answers.map((a, index) =>
-            <AnswerField length={clueData.answers[index].length} onChange={onAnswerChange(index)} />
+            <AnswerField
+              key={index}
+              length={clueData.answers[index].length}
+              onChange={onAnswerChange(index)}
+            />
           )}
           <br />
-          {answers.map(a => <div>{a}</div>)}
-          {!confirmed && <button onClick={confirmAnswers}>Submit</button>}
-          {confirmed != null && <div>{confirmed ? 'Correct' : 'Try again!'}</div>}
-          {confirmed && <button onClick={confirmAnswers}>Next</button>}
+          {renderSubmit()}
+          <Confetti active={confirmed == true} />
         </div>
       )}
-    </div>
+
+    </div >
   )
 }

@@ -59,9 +59,8 @@ export default ({ length, onChange }) => {
         }
 
         inputs.push((
-            <span className="CharacterInputWrapper">
+            <span key={i} className="CharacterInputWrapper">
                 <input className="CharacterInput"
-                    key={i}
                     type="text"
                     maxLength={1}
                     onChange={onChangeHandler(i)}

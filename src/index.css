@@ -14,13 +14,15 @@
 :root {
   --backgroundColor:#282c34;
   --white: white;
-  --teal: rgb(37, 205, 160)
+  --teal: #1ce8b1;
+  /* --teal:  rgb(37, 205, 160); */
+  --blue: #0887ff
 }
 
 body {
   margin: 2;
   background-color: var(--backgroundColor);
-  color: white;
+  color: var(--white);
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
@@ -29,16 +31,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 .App {
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 10%;
 }
 
 .Page {
-  margin-top: 20px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+@media only screen and (min-width: 768px) {
+  .Page {
+    margin-left: 20%;
+    margin-right: 20%;
+  }  
 }
 
 p {
@@ -53,33 +60,60 @@ button {
   font-family: QuestFont;
 } */
 
-
-button {
+button {  
   background-color: transparent;
-  color:white;
-  border-width: 4px;
-  border-style: solid;
-  border-color: white;
-  padding: 10px;
-  font-weight: 700;
-  font-size: 36px;
+  color: var(--teal);
+  border-color: var(--teal);
   font-family: QuestFont;
 }
 
 button:hover {
-  /* background-color: var(--teal); */
-  /* color:white; */
   color:transparent;
-  border-color: var(--teal);
-  color: var(--teal);
+  border-color: var(--white);
+  color: var(--white);
 }
 
 button:active {
-  /* outline:0 !important; */
   outline-color: var(--white);
-  /* border: white;
-  border-style: solid; */
 }
+
+
+button.primary {
+  border-width: 4px;
+  border-style: solid;
+  max-width: 300px;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+button.hint {
+  /* float: right; */
+  background-color: var(--blue);
+  color: var(--backgroundColor);
+  text-align: center;
+  vertical-align: middle;
+  border-width: 0px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: var(--blue);
+  width:30px;
+  height:30px;
+  padding: 0px;
+  font-weight: 800;
+  font-size: 24px;
+  font-family: QuestFont;
+}
+
+button.hint:hover {
+  background-color: var(--white);
+  color: var(--backgroundColor);
+}
+
+button.hint:active {
+  outline-color: var(--var(--white));
+}
+
 
 h2 {
   color: var(--teal);
@@ -103,11 +137,11 @@ li:before {content: '\1F48E';  margin-left: -20px; margin-right: 10px; }  /*Gem*
 
 
 .Help-Chat #message_body {
-  background-color: white !important;
+  background-color: var(--white) !important;
   
 }
 
 
 textarea#message_body.message-input {
-  background-color: white !important;
+  background-color: var(--white) !important;
 }

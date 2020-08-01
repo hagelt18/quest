@@ -14,14 +14,14 @@ function App() {
       <HashRouter basename='/'>
         <div className="App">
           <Header />
-          <Switch>
-            {/* <Route path={`/`} exact ><Home /></Route>
+            <Switch>
+              {/* <Route path={`/`} exact ><Home /></Route>
             <Route path={`/test`} exact ><Test /></Route> */}
-            <Route path={`/`} exact render={() => <Home />} />
-            <Route path={`/clue/:id`} exact render={(props) => <CluePage {...props} />} />
-            <Route path={`/test`} exact render={() => <Test />} />
-            <Route path={`/help`} exact render={() => <Help />} />
-          </Switch>
+              <Route path={`/`} exact render={() => <Home />} />
+              <Route path={`/clue/:id`} exact render={(props) => <CluePage {...props} />} />
+              <Route path={`/test`} exact render={() => <Test />} />
+              <Route path={`/help`} exact render={() => <Help />} />
+            </Switch>
         </div>
       </HashRouter>
     </React.Suspense>

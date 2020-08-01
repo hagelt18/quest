@@ -13,7 +13,7 @@ function Home() {
         It is up to you to find the legendary power crystals and use them to defeat the Wizard and save the Prince!
       </p>
       <QuestInfo />
-      <Link to={`/clue/${clues[0].id}`}><button className='center' style={{ marginTop: '48px' }}>Start</button></Link>
+      <Link to={`/clue/${clues[0].id}`}><button className='primary center' style={{ marginTop: '48px' }}>Start</button></Link>
     </div >
   );
 }
