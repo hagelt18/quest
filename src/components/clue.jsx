@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import AnswerField from './AnswerField';
 import AnswerField from './AnswerField';
-import Hint from './hint';
+// import Hint from './hint';
 import Confetti from './Confetti';
 
 export default ({ clueData }) => {
@@ -55,7 +55,7 @@ export default ({ clueData }) => {
       <br />
       {clueData.webAnswer && (
         <div>
-          <Hint hint={clueData.hint} />
+          {/* <Hint hint={clueData.hint} /> */}
           {clueData.answers.map((a, index) =>
             <AnswerField
               key={index}
@@ -66,6 +66,7 @@ export default ({ clueData }) => {
           <br />
           {renderSubmit()}
           <Confetti active={confirmed == true} />
+          {/* <HintStateContext.Provider value={clueData.hint} /> */}
         </div>
       )}
 

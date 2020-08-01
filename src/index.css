@@ -31,7 +31,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+/* 
 .App {
   margin-top: 10%;
 }
@@ -46,36 +46,21 @@ body {
     margin-left: 20%;
     margin-right: 20%;
   }  
-}
+} */
 
 p {
   font-size: 24px;
 }
-/* 
-button {
-  background-color: palegoldenrod;
-  color: #382807;
-  font-weight: 700;
-  font-size: 24px;
-  font-family: QuestFont;
-} */
 
 button {  
   background-color: transparent;
   color: var(--teal);
+  border-width: 0px;
+  border-style: none;
   border-color: var(--teal);
   font-family: QuestFont;
 }
 
-button:hover {
-  color:transparent;
-  border-color: var(--white);
-  color: var(--white);
-}
-
-button:active {
-  outline-color: var(--white);
-}
 
 
 button.primary {
@@ -85,6 +70,16 @@ button.primary {
   padding: 10px;
   font-weight: 700;
   font-size: 36px;
+}
+
+button.primary:hover {
+  color:transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+button.primary:active {
+  outline-color: var(--white);
 }
 
 button.hint {
@@ -144,4 +139,28 @@ li:before {content: '\1F48E';  margin-left: -20px; margin-right: 10px; }  /*Gem*
 
 textarea#message_body.message-input {
   background-color: var(--white) !important;
+}
+
+
+
+
+
+
+
+html {
+  min-height: 100%
+}
+body {
+  min-height: 100%
+}
+#root{
+  min-height: 100%
+}
+
+.App{
+  min-height: 100%
+}
+
+.App-Content {  
+  min-height: 100%
 }

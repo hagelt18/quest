@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { loadData, saveData } from '../common/save-data';
 import { useEffect } from 'react';
+import { store } from '../data/store';
+import { Modal, Button } from 'react-bootstrap';
 
-export default ({ hint }) => {
+export default () => {
 
   const [showHint, setShowHint] = useState(null);
-  let data = loadData();
+  const { state } = useContext(store);
+  let data = loadData();;
 
   useEffect(() => {
   }, [])
@@ -23,17 +26,44 @@ export default ({ hint }) => {
       }
     }
 
-    setShowHint(show);
+    // window.alert(state.hint);
+    setShowHint(true);
   }
 
-  if (!hint) {
+  if (!state.hint) {
     return null;
   }
 
+
+  const handleClose = () => setShowHint(false);
+
+  const renderModal = () => {
+    return (
+      <Modal style={{ color: 'black', fontWeight: 700 }} show={showHint} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>HINT!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{state.hint}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            Close
+          </Button>
+          {/* <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button> */}
+        </Modal.Footer>
+      </Modal>
+    )
+  }
+
   return (
-    <div className="hint">
-      {!showHint && <button className="hint" onClick={showHintButtonClicked}>?</button>}
-      {showHint && <p>HINT: {hint}</p>}
-    </div>
+    <>
+      {!showHint &&
+        // <button className="hint" onClick={showHintButtonClicked}>?</button>
+        <button onClick={showHintButtonClicked}>👁‍🗨</button>
+      }
+      {renderModal()}
+      {/* {showHint && <p>HINT: {hint}</p>} */}
+    </>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
 import QuestInfo from '../components/quest-info';
-import clues from '../assets/data/clues';
+import clues from '../data/clues.js';
 
 function Home() {
   return (
