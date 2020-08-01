@@ -4,7 +4,7 @@ import AnswerField from './AnswerField';
 // import Hint from './hint';
 import Confetti from './Confetti';
 
-export default ({ clueData }) => {
+export default ({ clueData, onNextButtonClicked }) => {
 
   const [answers, setAnswers] = useState([]);
   const [confirmed, setConfirmed] = useState(clueData.answers ? null : true);
@@ -33,9 +33,6 @@ export default ({ clueData }) => {
     setConfirmed(correct);
   }
 
-  const nextButtonClicked = () => {
-
-  }
 
   const renderSubmit = () => {
 
@@ -44,7 +41,10 @@ export default ({ clueData }) => {
       <>
         {answerSubmitted && !confirmed && <div>'Try again!'</div>}
         {!confirmed && <button onClick={confirmAnswers} className="primary">Submit</button>}
-        {confirmed && <button onClick={nextButtonClicked} className="primary">Next</button>}
+        {confirmed &&
+
+          <button onClick={onNextButtonClicked} className="primary">Next</button>
+        }
       </>
     );
   }
