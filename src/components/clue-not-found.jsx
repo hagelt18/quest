@@ -3,7 +3,7 @@ import React from 'react';
 export const ClueNotFound = () => {
   return (
     <div>
-      Clue doesn't exist
+      Clue does not exist
     </div>
   );
 }

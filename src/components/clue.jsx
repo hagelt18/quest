@@ -4,6 +4,7 @@ import AnswerField from './AnswerField';
 // import Hint from './hint';
 import Confetti from './Confetti';
 import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 export default ({ clueData, onNextButtonClicked }) => {
 
@@ -58,8 +59,8 @@ export default ({ clueData, onNextButtonClicked }) => {
 
   return (
     <div>
-      {clueData.clue && <p>{clueData.clue}</p>}
-      {clueData.question && <p>{clueData.question}</p>}
+      {clueData.clue && <p><ReactMarkdown source={clueData.clue} /></p>}
+      {clueData.question && <p><ReactMarkdown source={clueData.question} /></p>}
       <br />
       {clueData.webAnswer && (
         <div>
@@ -74,7 +75,7 @@ export default ({ clueData, onNextButtonClicked }) => {
           )}
           <br />
           {renderSubmit()}
-          <Confetti active={confirmed == true} />
+          <Confetti active={confirmed} />
           {/* <HintStateContext.Provider value={clueData.hint} /> */}
         </div>
       )}

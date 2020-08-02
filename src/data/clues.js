@@ -1,16 +1,16 @@
 const clues = [
-  {
-    id: '6101d6ed-c553-4693-a7b5-7c74bb0a1f39',
-    type: 'basic',
-    clue: 'We have just one, but with eight to spare. We rumble when touched and we wail when empty.',
-    question: 'What are we?',
-    webAnswer: false,
-    hint: 'We are in your house'
-  },
+  // {
+  //   id: '6101d6ed-c553-4693-a7b5-7c74bb0a1f39',
+  //   type: 'basic',
+  //   clue: 'We have just one, but with eight to spare. We rumble when touched and we wail when empty.',
+  //   question: 'What are we?',
+  //   webAnswer: false,
+  //   hint: 'We are in your house'
+  // },
   {
     id: 'eb8dd419-2569-4dde-b13b-1e31134184d4',
     type: 'basic',
-    clue: 'Travel to the nearest Black Bean Temple where two spoons touch and the beasts of Denali are revered. There you will find a clue to the whereabouts of the first Magic gem. Word around town is that you may even find something there to increase your stamina',
+    clue: 'Travel to the nearest Black Bean Temple where two spoons meet and the beasts of Denali are revered. There you will find a clue to the whereabouts of the first **magic gem**. Word around town is that you may even find something there to increase your stamina',
     question: 'What is another name for this place?',
     answers: ['caribou'],
     webAnswer: true,
@@ -37,7 +37,7 @@ const clues = [
   {
     id: '31a874c0-1a05-45ea-82e2-ea79adcf03a3',
     type: 'basic',
-    clue: 'Filled with new wisdom and vigor, you are now ready to embark on a journey to three locations. Each one will provide you with an KEY which will guide you to one of the MAGIC GEMS.',
+    clue: 'Filled with new wisdom and vigor, you are now ready to embark on a journey to three locations. Each one will provide you with an **key** which will guide you to one of the **magic gems**.',
     question: null,
     answers: [],
     webAnswer: true,
@@ -46,7 +46,7 @@ const clues = [
   {
     id: '435c10bc-8546-4d15-8a86-270f4a335a77',
     type: 'basic',
-    clue: 'Deep within the metropolis lies a wondrous place full of Nature’s beauty and splendor. There you will find a wise Sorceress living there who will be able to aid you on your adventure.\r\n\r\nJin, Mu, Shui, Huo, Tu',
+    clue: 'Deep within the metropolis lies a wondrous place full of Nature’s beauty and splendor. There you will find a wise Sorceress living there who will be able to aid you on your adventure.\r\n\r\nJin, **Mu**, **Shui**, Huo, Tu',
     question: 'Enter the name of the place:',
     image: 'fiveelements',
     answers: ['wood', 'lake'],
@@ -70,7 +70,7 @@ const clues = [
     question: 'What was their name?',
     answers: ['dorothy', 'holstrom'],
     webAnswer: true,
-    hint: 'Follow the shortest path, keep the water to your left.'
+    hint: 'Start at the entrance and follow the recommended path, look closely at each resting place along the way.'
   },
   {
     id: '6e533cb1-63ef-4939-9f92-57220d63ad82',
@@ -93,8 +93,8 @@ const clues = [
   {
     id: 'cf6e3e8b-ab3d-494d-a912-f91f494c4e96',
     type: 'basic',
-    clue: 'Here in this grand bazaar of amusements awaits one of the three KEYs that will aid you in your quest. Worry not, brave hero...there are many in this land who would see to your success. ',
-    question: 'See the store merchant and ask them for that which was left for you to PICK UP.',
+    clue: 'Here in this grand bazaar of amusements awaits one of the three **keys** that will aid you in your quest. Worry not, brave hero...there are many in this land who would see to your success. ',
+    question: 'See the store merchant and ask them for that which was left for you to **pick up**.',
     image: 'barcode',
     answers: ['711719519065'],
     webAnswer: true,
@@ -103,7 +103,7 @@ const clues = [
   {
     id: '75beaf1b-66d2-44a4-95fb-2867ebbae0c6',
     type: 'basic',
-    clue: 'Nice work. There is yet one more KEY you must obtain. Lucky for you, it is very near. Like...if you were playing hot or cold, you could say you are HOT.',
+    clue: 'Nice work. There is yet one more **key** you must obtain. Lucky for you, it is very near. Like...if you were playing hot or cold, you could say you are **hot**.',
     question: 'What numerals rest above the enterance?',
     answers: ['26'],
     webAnswer: true,
@@ -112,16 +112,16 @@ const clues = [
   {
     id: '2c2bf8ed-3e80-4da7-8d74-b6dce1f76b1a',
     type: 'basic',
-    clue: 'Your final KEY awaits you here. Speak with the merchant and tell them your name, they will have it for you in what they call a PULL BOX. Since you are out there working hard trying to save the prince, this one is on the house.',
-    question: 'Confirm You have received it by entering the names of the two individuals represented on the front of the KEY',
+    clue: 'Your final **key** awaits you here. Speak with the merchant and tell them your name, they will have it for you in what they call a **pull box**. Since you are out there working hard trying to save the prince, this one is on the house.',
+    question: 'Confirm You have received it by entering the names of the two individuals represented on the front of the **key**',
     answers: ['gambit', 'rogue'],
     webAnswer: true,
     hint: 'Try the Help Whistle in your inventory if you are having trouble.'
   },
   {
     id: 'c1bf0873-02ad-4f14-8858-9fa25a8583f2',
-    type: 'keys-obtained',
-    clue: 'Now that you possess all three KEYS, you can enter the Echo Temple where you will find the gems. To enter the temple, you must return home and carry with you all three keys. When you walk through the door, you will not be in your real home, but an echo of itself in another plane of existence. Prepare yourself for the final trial',
+    type: 'artifacts-obtained',
+    clue: 'Now that you possess all three **keys**, you can enter the Echo Temple where you will find the gems. To enter the temple, you must return home and carry with you all three artificacts. When you walk through the door, you will not be in your real home, but an echo of itself in another plane of existence. Prepare yourself for the final trial',
     question: null,
     answers: [],
     webAnswer: false

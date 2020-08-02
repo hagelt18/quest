@@ -25,9 +25,10 @@ export default () => {
         style={{ width: '48px', height: '48px' }}
       />
       <ul>
-        <li>Do your best</li>
-        <li>Be victorious</li>
-      </ul>
-    </div>
+        <li>The Google is allowed</li>
+        <li>If you are stuck, take a look in your <strong>inventory bag</strong> for help.</li>
+        <li>Have fun</li>
+      </ul >
+    </div >
   )
 }
