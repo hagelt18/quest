@@ -3,11 +3,18 @@ import React, { useState } from 'react';
 import AnswerField from './AnswerField';
 // import Hint from './hint';
 import Confetti from './Confetti';
+import { useEffect } from 'react';
 
 export default ({ clueData, onNextButtonClicked }) => {
 
   const [answers, setAnswers] = useState([]);
   const [confirmed, setConfirmed] = useState(clueData.answers ? null : true);
+
+  useEffect(() => {
+    setAnswers([]);
+    setConfirmed(null);
+
+  }, [clueData])
 
   const onAnswerChange = index => (value) => {
     // setAnswer(e.target.value);
@@ -59,7 +66,8 @@ export default ({ clueData, onNextButtonClicked }) => {
           {clueData.answers.map((a, index) =>
             <AnswerField
               key={index}
-              length={clueData.answers[index].length}
+              clueId={clueData.id}
+              answer={clueData.answers[index]}
               onChange={onAnswerChange(index)}
             />
           )}
