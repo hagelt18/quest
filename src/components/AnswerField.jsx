@@ -10,7 +10,7 @@ export default ({ clueId, answer, onChange }) => {
 
     useEffect(() => {
         setChars([...answer].map(a => ''));
-    }, [clueId])
+    }, [answer, clueId])
 
     const inputValueChanged = (i, e, value) => {
         const newChars = [...chars];

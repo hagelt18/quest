@@ -16,26 +16,22 @@ export default () => {
   }, [])
 
   const showHintButtonClicked = () => {
-    let show = true;
     if (!data.hintWarningConfirmed) {
       // Warn user
       const confirmed = window.confirm("You are about to recieve your first hint, are you sure?");
-      if (!confirmed) {
-        show = false;
-      } else {
+      if (confirmed) {
         data.hintWarningConfirmed = true;
         saveData(data);
+        setShowHint(true);
       }
+    } else {
+      setShowHint(true);
     }
-
-    // window.alert(state.hint);
-    setShowHint(true);
   }
 
   if (!state.hint) {
     return null;
   }
-
 
   const handleClose = () => setShowHint(false);
 

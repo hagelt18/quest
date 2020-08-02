@@ -17,7 +17,7 @@ export const CluePage = (props) => {
 
   useEffect(() => {
     dispatch({ type: 'SET_HINT', payload: clueData.hint })
-  }, [props.match])
+  }, [clueData, props.match, dispatch])
 
   const onNextButtonClicked = () => {
     const clueIndex = clues.findIndex(c => c.id === clueId);

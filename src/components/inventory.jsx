@@ -6,8 +6,6 @@ import './inventory.css'
 import BackpackClosed from '../assets/images/bp.png';
 import BackpackOpen from '../assets/images/bpo.png';
 import WarpWhistle from '../assets/images/warp-whistle.png';
-import QuestionBlock from '../assets/images/question-block.png';
-
 
 export default () => {
 

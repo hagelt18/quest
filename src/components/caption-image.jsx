@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import './caption-image.css'
-
+import React from 'react';
+import './caption-image.css';
 
 export default ({ image, caption, altText }) => {
-
     return (
-
         <div className="caption-img">
             <img className="caption-img"
                 src={image}
