@@ -6,7 +6,8 @@ import { StateProvider } from './data/store.js';
 
 const Home = React.lazy(() => import('./areas/home'));
 const Test = React.lazy(() => import('./areas/test'));
-const Help = React.lazy(() => import('./areas/help/help'));
+const Helpee = React.lazy(() => import('./areas/help/helpee'));
+const Helper = React.lazy(() => import('./areas/help/helper'));
 const CluePage = React.lazy(() => import('./areas/clue-page'));
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
                 <Route path={`/`} exact render={() => <Home />} />
                 <Route path={`/clue/:id`} exact render={(props) => <CluePage {...props} />} />
                 <Route path={`/test`} exact render={() => <Test />} />
-                <Route path={`/help`} exact render={() => <Help />} />
+                <Route path={`/help`} exact render={() => <Helpee />} />
+                <Route path={`/helper`} exact render={() => <Helper />} />
               </Switch>
             </Container>
             {/* <Footer /> */}

@@ -1,6 +1,7 @@
 export const saveProgress = (id) => {
   const data = loadData();
   data.currentClue = id;
+  data.completedClues = [...data.completedClues, id];
   saveData(data);
 }
 

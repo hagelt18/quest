@@ -2,7 +2,7 @@ import React from 'react';
 import Gate from '../../components/gate';
 import { useHistory } from 'react-router';
 
-export default () => {
+export default async () => {
 
   const history = useHistory();
 
