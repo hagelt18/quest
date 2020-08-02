@@ -1,9 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from "react-router-dom";
-//import Home from './areas/home';
-//import Test from './areas/test';
 import Header from './components/header';
-import Footer from './components/footer';
 import { Container } from 'react-bootstrap';
 import { StateProvider } from './data/store.js';
 
@@ -29,7 +26,7 @@ function App() {
                 <Route path={`/help`} exact render={() => <Help />} />
               </Switch>
             </Container>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </StateProvider>
       </HashRouter>

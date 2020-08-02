@@ -3,6 +3,8 @@ import { loadData, saveData } from '../common/save-data';
 import { useEffect } from 'react';
 import { store } from '../data/store';
 import { Modal, Button } from 'react-bootstrap';
+import CaptionImage from './caption-image';
+import QuestionBlock from '../assets/images/question-block.png';
 
 export default () => {
 
@@ -48,9 +50,6 @@ export default () => {
           <Button variant="primary" onClick={handleClose}>
             Close
           </Button>
-          {/* <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button> */}
         </Modal.Footer>
       </Modal>
     )
@@ -58,12 +57,10 @@ export default () => {
 
   return (
     <>
-      {!showHint &&
-        // <button className="hint" onClick={showHintButtonClicked}>?</button>
-        <button onClick={showHintButtonClicked}>👁‍🗨</button>
-      }
+      <button onClick={showHintButtonClicked}>
+        <CaptionImage image={QuestionBlock} caption="Hint" altText="Hint" />
+      </button>
       {renderModal()}
-      {/* {showHint && <p>HINT: {hint}</p>} */}
     </>
   )
 }

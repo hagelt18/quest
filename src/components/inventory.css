@@ -1,0 +1,23 @@
+
+.inventory {
+    margin-top: 20px;
+}
+.inventory-backpack{
+    position: relative;
+    z-index: 3;
+}
+.inventory-content {
+    padding: 16px;
+    background-color: palegoldenrod;
+    /* border-color: #5e315b;
+    border-width: 4px;
+    border-style: solid; */
+    border-radius: 8px;
+    min-height: 80px;
+    width: calc(100% - 48px);
+    display: block;
+    z-index: 1;
+    position: relative;
+    top: -24px;
+    left: 24px;
+}

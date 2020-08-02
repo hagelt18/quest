@@ -5,6 +5,7 @@ import clues from '../data/clues';
 import { store } from '../data/store';
 import Gate from '../components/gate';
 import { useHistory } from 'react-router-dom';
+import Inventory from '../components/inventory';
 
 export const CluePage = (props) => {
   const globalState = useContext(store);
@@ -16,7 +17,7 @@ export const CluePage = (props) => {
 
   useEffect(() => {
     dispatch({ type: 'SET_HINT', payload: clueData.hint })
-  }, [])
+  }, [props.match])
 
   const onNextButtonClicked = () => {
     const clueIndex = clues.findIndex(c => c.id === clueId);
@@ -24,7 +25,6 @@ export const CluePage = (props) => {
       const nextClue = clues[clueIndex + 1];
       history.push(`/clue/${nextClue.id}`);
     }
-
   }
 
   const renderClue = (type) => {
@@ -44,6 +44,7 @@ export const CluePage = (props) => {
     <div className="ClueWrapper Page">
       <Gate>
         {renderClue(clueData.type)}
+        <Inventory />
       </Gate>
     </div>
   );

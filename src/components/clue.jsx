@@ -58,6 +58,7 @@ export default ({ clueData, onNextButtonClicked }) => {
 
   return (
     <div>
+      {clueData.clue && <p>{clueData.clue}</p>}
       {clueData.question && <p>{clueData.question}</p>}
       <br />
       {clueData.webAnswer && (

@@ -1,0 +1,20 @@
+
+div.caption-img {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 48px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+image.caption-img {
+  /* width: 100px;
+  height: 100px; */
+  background-color: grey;
+}
+span.caption-img {
+  display: block;
+  font-weight: 700;
+  font-family: 'CleanFont';
+  color: black;
+}
