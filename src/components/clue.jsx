@@ -59,8 +59,8 @@ export default ({ clueData, onNextButtonClicked }) => {
 
   return (
     <div>
-      {clueData.clue && <p><ReactMarkdown source={clueData.clue} /></p>}
-      {clueData.question && <p><ReactMarkdown source={clueData.question} /></p>}
+      {clueData.clue && <ReactMarkdown source={clueData.clue} />}
+      {clueData.question && <ReactMarkdown source={clueData.question} />}
       <br />
       {clueData.webAnswer && (
         <div>

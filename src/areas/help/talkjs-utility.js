@@ -5,7 +5,7 @@ export const getHelpee = () => new Talk.User({
   id: "123456",
   name: "Hero",
   email: "hero@test.com",
-  photoUrl: "https://i.imgur.com/w1UJlGp.png",
+  photoUrl: "https://i.imgur.com/9M8gvLW.png",
   welcomeMessage: "Help will come to those who ask for it."
 });
 

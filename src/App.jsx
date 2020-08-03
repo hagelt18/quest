@@ -9,6 +9,7 @@ const Test = React.lazy(() => import('./areas/test'));
 const Helpee = React.lazy(() => import('./areas/help/helpee'));
 const Helper = React.lazy(() => import('./areas/help/helper'));
 const CluePage = React.lazy(() => import('./areas/clue-page'));
+const PianoPage = React.lazy(() => import('./areas/piano/piano'));
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path={`/test`} exact render={() => <Test />} />
                 <Route path={`/help`} exact render={() => <Helpee />} />
                 <Route path={`/helper`} exact render={() => <Helper />} />
+                <Route path={`/piano`} exact render={() => <PianoPage />} />
               </Switch>
             </Container>
             {/* <Footer /> */}

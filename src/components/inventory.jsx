@@ -6,6 +6,7 @@ import './inventory.css'
 import BackpackClosed from '../assets/images/bp.png';
 import BackpackOpen from '../assets/images/bpo.png';
 import WarpWhistle from '../assets/images/warp-whistle.png';
+import MusicBox from '../assets/images/music-box.png';
 
 export default () => {
 
@@ -30,6 +31,9 @@ export default () => {
                     <CaptionImage image={WarpWhistle} caption="Help" altText="Get Help" />
                 </Link>
                 <Hint />
+                <Link to={`/piano`}>
+                    <CaptionImage image={MusicBox} caption="Piano" altText="Piano" />
+                </Link>
                 <button>
                 </button>
             </div>
