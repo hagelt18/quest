@@ -10,9 +10,10 @@ const clues = [
   {
     id: 'eb8dd419-2569-4dde-b13b-1e31134184d4',
     type: 'basic',
-    clue: 'Travel to the nearest Black Bean Temple where two spoons meet and the beasts of Denali are revered. There you will find a clue to the whereabouts of the first **magic gem**. Word around town is that you may even find something there to increase your stamina',
+    clue: 'Travel to the nearest Black Bean Temple where two spoons meet. There you will find a clue to the whereabouts of the first **magic gem**. Word around town is that you may even find something there to increase your stamina',
     question: 'What is another name for this place?',
-    answers: ['caribou'],
+    answers: ['caribou', 'coffee'],
+    successMessage: '[7950 Penn Ave S, Bloomington, MN 55431](https://goo.gl/maps/vpSBssmodBDa4Ezr7)',
     webAnswer: true,
     hint: 'Building number of your favorite place to go in the morning'
   },
@@ -51,6 +52,7 @@ const clues = [
     image: 'fiveelements',
     answers: ['wood', 'lake'],
     webAnswer: true,
+    successMessage: '[6710 Lake Shore Dr S, Richfield, MN 55423](https://goo.gl/maps/jN9Vs2FVRDYEjpjJA)',
     hint: 'This great sanctuary reserves a safe location for the old world to live on, safe from the ever growing threat of humanity.'
   },
   {
@@ -84,9 +86,10 @@ const clues = [
   {
     id: 'c9fbc8bf-620a-4d29-b5fc-cbe77acb9ebf',
     type: 'basic',
-    clue: 'That place where you met your true love, though far from you now, has many like it here.',
+    clue: 'That place where you met your true love, though far from you now, there are many like it here.',
     question: 'What is this place called?',
     answers: ['gamestop'],
+    successMessage: '[34 W 66th St, Richfield, MN 55423](https://goo.gl/maps/urUjK9xuyW9orvpU9)',
     webAnswer: true,
     hint: 'A market place for amusements, somewhere next to a rainbow.'
   },
@@ -107,6 +110,7 @@ const clues = [
     question: 'What numerals rest above the enterance?',
     answers: ['26'],
     webAnswer: true,
+    successMessage: '[26 W 66th St, Richfield, MN 55423](https://goo.gl/maps/5YSNsk3ED3kuFtf87)',
     hint: 'Your sorceress actually knows the "Hot or Cold" spell. Ask her to try it out.'
   },
   {

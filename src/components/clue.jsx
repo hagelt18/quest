@@ -48,9 +48,9 @@ export default ({ clueData, onNextButtonClicked }) => {
     return (
       <>
         {answerSubmitted && !confirmed && <div>'Try again!'</div>}
+        {answerSubmitted && confirmed && clueData.successMessage && <ReactMarkdown source={clueData.successMessage} />}
         {!confirmed && <button onClick={confirmAnswers} className="primary">Submit</button>}
         {confirmed &&
-
           <button onClick={onNextButtonClicked} className="primary">Next</button>
         }
       </>

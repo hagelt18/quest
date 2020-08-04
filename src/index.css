@@ -31,6 +31,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: #4dcfff;
+}
+
 /* 
 .App {
   margin-top: 10%;
