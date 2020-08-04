@@ -128,3 +128,14 @@ class SoundfontProvider extends React.Component {
 }
 
 export default SoundfontProvider;
+
+export const PlayNotes = async (notes, delayMs) => {
+  var instrument = await Soundfont.instrument(new AudioContext(), 'acoustic_grand_piano');
+  for (let n of notes) {
+    instrument.play(n);
+    await new Promise(r => setTimeout(r, delayMs));
+  }
+  // notes.forEach(async n => {
+
+  // });
+}
