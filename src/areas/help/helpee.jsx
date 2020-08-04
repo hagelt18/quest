@@ -19,7 +19,7 @@ export default () => {
   }
   useEffect(() => {
     setUpChat();
-  }, [setUpChat]);
+  }, []);
 
 
   return (
