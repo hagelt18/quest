@@ -59,6 +59,7 @@ function Home() {
 
   return (
     <div className="Piano Page">
+      <button onClick={() => { history.goBack() }}>← BACK</button>
       <SoundfontProvider
         audioContext={audioContext}
         instrumentName={config.instrumentName}
@@ -89,7 +90,6 @@ function Home() {
         {success ? <h2>DODEEDODODODOO</h2> : null}
       </div>
       <Confetti active={success} />
-      <button onClick={() => { history.goBack() }}> BACK</button>
     </div>
   );
 }

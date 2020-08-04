@@ -1,7 +1,17 @@
+.footer {
+  
+  }
 
 .inventory {
-    margin-top: 20px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
+
 .inventory-backpack{
     position: relative;
     z-index: 3;
@@ -9,15 +19,12 @@
 .inventory-content {
     padding: 16px;
     background-color: palegoldenrod;
-    /* border-color: #5e315b;
-    border-width: 4px;
-    border-style: solid; */
     border-radius: 8px;
     min-height: 80px;
-    width: calc(100% - 48px);
+    width: calc(100% - 88px);
     display: block;
     z-index: 1;
     position: relative;
-    top: -24px;
+    top: 24px;
     left: 24px;
 }

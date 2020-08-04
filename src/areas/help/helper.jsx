@@ -26,13 +26,13 @@ export default () => {
   return (
     <div className="Help-Chat">
       <Gate>
+        <button onClick={() => { history.goBack() }}>← BACK</button>
         <br />
         <span>
           <div style={{ height: '500px' }} ref={c => container = c}>Loading...</div>
         </span>
       </Gate>
       <br />
-      <button onClick={() => { history.goBack() }}> BACK</button>
     </div>
   );
 

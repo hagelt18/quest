@@ -42,6 +42,7 @@ export default () => {
 
     return (
         <div className="inventory">
+            {renderInventoryContainer()}
             <div className="inventory-backpack">
                 {open ?
                     <img
@@ -59,7 +60,6 @@ export default () => {
                     />
                 }
             </div>
-            {renderInventoryContainer()}
         </div>
     );
 }
