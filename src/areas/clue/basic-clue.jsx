@@ -96,7 +96,7 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       {previouslySolved && (
         clueData.answers.map(a => <h3 key={a}>{a}</h3>)
       )}
-      {(confirmed || previouslySolved || !answerNeeded) &&
+      {(confirmed || previouslySolved || !answerNeeded()) &&
         <button onClick={onNextButtonClicked} className="center primary mt-2">Next</button>
       }
 

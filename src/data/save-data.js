@@ -22,6 +22,7 @@ export const getNextClueId = () => {
   if (clues.length > currentClueIndex + 1) {
     return clues[currentClueIndex + 1].id;
   }
+  return clues[currentClueIndex].id;
 }
 
 export const saveName = (name) => {

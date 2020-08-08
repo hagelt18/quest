@@ -6,9 +6,6 @@ import clues from '../data/clues';
 const StartContinue = ({ primary }) => {
 
   const nextClue = getNextClueId();
-  if (!nextClue) {
-    return null;
-  }
 
   const isFirstClue = clues[0].id === nextClue;
 
