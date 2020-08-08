@@ -2,6 +2,7 @@ import React from 'react';
 import './home.css';
 import QuestInfo from '../components/quest-info';
 import StartContinue from '../components/start-continue';
+import ResetButton from '../components/reset-button';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <div style={{ marginTop: '48px' }}>
         <StartContinue primary={true} />
       </div>
+      <ResetButton />
     </div >
   );
 }

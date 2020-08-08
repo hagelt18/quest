@@ -9,16 +9,18 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
 
   const [answers, setAnswers] = useState([]);
   const [confirmed, setConfirmed] = useState(null);
+  const [previouslySolved, setPreviouslySolved] = useState(null);
+  const [currentClueId, setCurrentClueId] = useState(null);
   const answerNeeded = () => ((clueData.answers || []).length > 0);
 
-  const data = loadData();
-  const previouslySolved = data.completedClues.some(c => c === clueData.id);
-
   useEffect(() => {
-
-    setAnswers(!previouslySolved ? [] : clueData.answers);
-    setConfirmed(previouslySolved ? 'true' : null);
-    if (!answerNeeded) {
+    setCurrentClueId(clueData.id);
+    const data = loadData();
+    const prevSolved = data.completedClues.some(c => c === clueData.id);
+    setPreviouslySolved(prevSolved)
+    setAnswers(!prevSolved ? [] : clueData.answers);
+    setConfirmed(null);
+    if (!answerNeeded()) {
       onSolved(clueData.id);
     }
   }, [clueData])
@@ -64,6 +66,11 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
     );
   }
 
+  if (currentClueId !== clueData.id) {
+    // clue is changing
+    return null;
+  }
+
   return (
     <div>
       {clueData.clue && <ReactMarkdown source={clueData.clue} />}
@@ -89,8 +96,8 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       {previouslySolved && (
         clueData.answers.map(a => <h3 key={a}>{a}</h3>)
       )}
-      {(confirmed || !answerNeeded) &&
-        <button onClick={onNextButtonClicked} className="primary mt-2">Next</button>
+      {(confirmed || previouslySolved || !answerNeeded) &&
+        <button onClick={onNextButtonClicked} className="center primary mt-2">Next</button>
       }
 
     </div >
