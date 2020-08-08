@@ -77,10 +77,10 @@ const clues = [
   {
     id: '6e533cb1-63ef-4939-9f92-57220d63ad82',
     type: 'basic',
-    clue: 'Legends tell of a benevolent Sorceress who once lived in this wooded sanctuary. They say she returns to assist those in need who are pure of heart. If the stories are true, she rests in at the heart of wood lake.',
-    question: 'Find her and ask for her aid.',
-    answers: [],
-    webAnswer: false,
+    clue: 'Legends tell of a benevolent Sorceress who once lived in this wooded sanctuary. They say she returns to assist those in need who are pure of heart. If the stories are true, she rests in at the heart of wood lake. Find her and ask for her aid.',
+    question: '',
+    answers: ['yentihw'],
+    webAnswer: true,
     hint: 'If only there was some way you could walk across the water to the middle of the lake.'
   },
   {
