@@ -2,7 +2,7 @@
   "name": "quest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hagelt18.github.io/quest/",
+  "homepage": "http://daniellaquest.com/",
   "title": "Quest",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
