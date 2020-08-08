@@ -10,6 +10,8 @@ const Helpee = React.lazy(() => import('./areas/help/helpee'));
 const Helper = React.lazy(() => import('./areas/help/helper'));
 const CluePage = React.lazy(() => import('./areas/clue-page'));
 const PianoPage = React.lazy(() => import('./areas/piano/piano'));
+const ComicPage = React.lazy(() => import("./areas/comic/comic-page"));
+const MazePage = React.lazy(() => import("./areas/maze/maze-page"));
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
                 <Route path={`/help`} exact render={() => <Helpee />} />
                 <Route path={`/helper`} exact render={() => <Helper />} />
                 <Route path={`/piano`} exact render={() => <PianoPage />} />
+                <Route path={`/comic`} exact render={() => <ComicPage />} />
+                <Route path={`/maze`} exact render={() => <MazePage />} />
               </Switch>
             </Container>
             {/* <Footer /> */}

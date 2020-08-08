@@ -12,6 +12,10 @@
     bottom: 0;
 }
 
+.inventory.closed {
+    width: 48px;
+}
+
 .inventory-backpack{
     position: relative;
     z-index: 3;

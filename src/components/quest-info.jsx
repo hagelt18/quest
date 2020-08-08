@@ -7,7 +7,7 @@ export default () => {
   return (
     <div>
       <h2>Goal</h2>
-      <p>Find the crystals, use them to defeat the Wizard, and save the Prince!</p>
+      <p>Find the <strong>magic gems</strong>, use them to defeat the Wizard, and save the Prince!</p>
       <h2>Words of Wisdom</h2>
       <img
         src={Fire}
@@ -24,11 +24,15 @@ export default () => {
         alt="Fire"
         style={{ width: '48px', height: '48px' }}
       />
-      <ul>
-        <li>The Google is allowed</li>
-        <li>If you are stuck, take a look in your <strong>inventory bag</strong> for help.</li>
-        <li>Have fun</li>
-      </ul >
+      <br />
+      <br />
+      <div>
+        <ul className="diamondlist">
+          <li>The Google is allowed</li>
+          <li>If you are stuck, take a look in your <strong>inventory bag</strong> for help.</li>
+          <li>Have fun</li>
+        </ul >
+      </div>
     </div >
   )
 }

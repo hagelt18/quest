@@ -3,10 +3,12 @@ import { Piano, KeyboardShortcuts, MidiNumbers } from 'react-piano';
 import SoundfontProvider, { PlayNotes } from './soundfont-provider';
 import 'react-piano/dist/styles.css';
 import DimensionsProvider from './dimensions-provider';
-import Confetti from '../../components/Confetti';
+import Confetti from '../../components/confetti';
 import { useHistory } from 'react-router-dom';
 import { zeldaSecret, midiNumToNoteDictionary } from './songs';
 import { useEffect } from 'react';
+import { loadData, saveData } from '../../data/save-data';
+import StartContinue from '../../components/start-continue';
 
 function Home() {
   const history = useHistory();
@@ -53,6 +55,9 @@ function Home() {
     setPreviousNotes(newNotes);
     setCurrentNote(note);
     if (newNotes.join(' ') === 'A5 G5 F# G5 G5 F5 E5 F5') {
+      const data = loadData();
+      data.instrumentUnlocked = true;
+      saveData();
       setSuccess(true);
     }
   }
@@ -87,7 +92,12 @@ function Home() {
         {currentNote}
       </div>
       <div>
-        {success ? <h2>DODEEDODODODOO</h2> : null}
+        {success && (
+          <div>
+            <h2>DODEEDODODODOO</h2>
+            <StartContinue />
+          </div>
+        )}
       </div>
       <Confetti active={success} />
     </div>

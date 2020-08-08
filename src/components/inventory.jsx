@@ -7,6 +7,7 @@ import BackpackClosed from '../assets/images/bp.png';
 import BackpackOpen from '../assets/images/bpo.png';
 import WarpWhistle from '../assets/images/warp-whistle.png';
 import MusicBox from '../assets/images/music-box.png';
+import { loadData } from '../data/save-data';
 
 export default () => {
 
@@ -20,6 +21,8 @@ export default () => {
         setOpen(false);
     }
 
+    const data = loadData();
+
     const renderInventoryContainer = () => {
         if (!open) {
             return null;
@@ -31,19 +34,22 @@ export default () => {
                     <CaptionImage image={WarpWhistle} caption="Help" altText="Get Help" />
                 </Link>
                 <Hint />
-                <Link to={`/piano`}>
-                    <CaptionImage image={MusicBox} caption="Piano" altText="Piano" />
-                </Link>
+                {data.instrumentUnlocked && (
+                    <Link to={`/piano`}>
+                        <CaptionImage image={MusicBox} caption="Piano" altText="Piano" />
+                    </Link>
+                )}
                 <button>
                 </button>
             </div>
         );
     }
 
+    const iconStyle = { width: '48px', height: '48px' };
     return (
-        <div className="inventory">
+        <div className={`inventory ${!open ? 'closed' : ''}`}>
             {renderInventoryContainer()}
-            <div className="inventory-backpack">
+            <div className="inventory-backpack" >
                 {open ?
                     <img
                         src={BackpackOpen}

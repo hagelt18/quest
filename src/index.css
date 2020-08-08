@@ -122,8 +122,8 @@ a {
   text-decoration: none;
 }
 
-li {list-style:none; }
-li:before {content: '\1F48E';  margin-left: -20px; margin-right: 10px; }  /*Gem*/
+ul.diamondlist > li {list-style:none; }
+ul.diamondlist > li:before {content: '\1F48E';  margin-left: -20px; margin-right: 10px; }  /*Gem*/
 /* li:before { content: '\2694'; margin-left: -20px; margin-right: 10px; }  // Crossed Swords */
 
 .center {

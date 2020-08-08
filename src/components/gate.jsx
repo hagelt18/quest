@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { loadData, saveName } from '../common/save-data';
+import { loadData, saveName } from '../data/save-data';
 
 export default (props) => {
 
@@ -57,7 +57,7 @@ export default (props) => {
   return (
     <div className="Gate">
       {renderPrompt()}
-      {confirmed === false && <div>You are not the true hero. Only the chosen adventurer may receive guidance.</div>}
+      {confirmed === false && <div>You are not the true hero. Only the chosen adventurer may enter.</div>}
       {confirmed === true && props.children}
     </div>
   );

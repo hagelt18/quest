@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './home.css';
 import QuestInfo from '../components/quest-info';
-import clues from '../data/clues.js';
+import StartContinue from '../components/start-continue';
 
 function Home() {
   return (
@@ -13,7 +12,9 @@ function Home() {
         It is up to you to find the legendary <strong>magic gems</strong> and use them to defeat the Wizard and save the Prince!
       </p>
       <QuestInfo />
-      <Link to={`/clue/${clues[0].id}`}><button className='primary center' style={{ marginTop: '48px' }}>Start</button></Link>
+      <div style={{ marginTop: '48px' }}>
+        <StartContinue primary={true} />
+      </div>
     </div >
   );
 }

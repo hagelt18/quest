@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 // import AnswerField from './AnswerField';
 import AnswerField from './AnswerField';
 // import Hint from './hint';
-import Confetti from './Confetti';
+import Confetti from './confetti';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-export default ({ clueData, onNextButtonClicked }) => {
+export default ({ clueData, onSolved, onNextButtonClicked }) => {
 
   const [answers, setAnswers] = useState([]);
   const [confirmed, setConfirmed] = useState(clueData.answers ? null : true);
@@ -14,7 +14,6 @@ export default ({ clueData, onNextButtonClicked }) => {
   useEffect(() => {
     setAnswers([]);
     setConfirmed(null);
-
   }, [clueData])
 
   const onAnswerChange = index => (value) => {
@@ -39,6 +38,9 @@ export default ({ clueData, onNextButtonClicked }) => {
       }
     }
     setConfirmed(correct);
+    if (correct) {
+      onSolved(clueData.id);
+    }
   }
 
 
@@ -46,14 +48,14 @@ export default ({ clueData, onNextButtonClicked }) => {
 
     const answerSubmitted = clueData.answers && confirmed != null; // If there are answers to submit, and one has been submitted (confirmed will be true or false)
     return (
-      <>
-        {answerSubmitted && !confirmed && <div>'Try again!'</div>}
+      <div className="center">
+        {answerSubmitted && !confirmed && <h3>Try again!</h3>}
         {answerSubmitted && confirmed && clueData.successMessage && <ReactMarkdown source={clueData.successMessage} />}
-        {!confirmed && <button onClick={confirmAnswers} className="primary">Submit</button>}
+        {!confirmed && <button onClick={confirmAnswers} className="primary mt-2">Submit</button>}
         {confirmed &&
           <button onClick={onNextButtonClicked} className="primary">Next</button>
         }
-      </>
+      </div>
     );
   }
 
