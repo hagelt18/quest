@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Hint from './hint';
 import CaptionImage from './caption-image';
 import './inventory.css'
@@ -12,6 +12,7 @@ import { loadData } from '../data/save-data';
 export default () => {
 
     const [open, setOpen] = useState(false);
+    const history = useHistory();
 
     const openInventory = () => {
         setOpen(true);
@@ -23,6 +24,9 @@ export default () => {
 
     const data = loadData();
 
+    const onWarpWhistleClicked = () => { history.push('/help') };
+    const onMusicBoxClicked = () => { history.push('/piano') };
+
     const renderInventoryContainer = () => {
         if (!open) {
             return null;
@@ -30,14 +34,10 @@ export default () => {
 
         return (
             <div className="inventory-content">
-                <Link to={`/help`}>
-                    <CaptionImage image={WarpWhistle} caption="Help" altText="Get Help" />
-                </Link>
+                <CaptionImage image={WarpWhistle} caption="Help" altText="Get Help" onClick={onWarpWhistleClicked} />
                 <Hint />
                 {data.instrumentUnlocked && (
-                    <Link to={`/piano`}>
-                        <CaptionImage image={MusicBox} caption="Piano" altText="Piano" />
-                    </Link>
+                    <CaptionImage image={MusicBox} caption="Piano" altText="Piano" onClick={onMusicBoxClicked} />
                 )}
                 <button>
                 </button>
@@ -54,14 +54,14 @@ export default () => {
                     <img
                         src={BackpackOpen}
                         alt="Backpack Open"
-                        style={{ width: '48px', height: '48px' }}
+                        style={iconStyle}
                         onClick={closeInventory}
                     />
                     :
                     <img
                         src={BackpackClosed}
                         alt="Backpack Closed"
-                        style={{ width: '48px', height: '48px' }}
+                        style={iconStyle}
                         onClick={openInventory}
                     />
                 }

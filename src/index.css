@@ -62,7 +62,8 @@ button {
   border-width: 0px;
   border-style: none;
   border-color: var(--teal);
-  font-family: QuestFont;
+  font-family: 'CleanFont';
+  font-size: 24px;
 }
 
 
@@ -101,7 +102,7 @@ button.hint {
   padding: 0px;
   font-weight: 800;
   font-size: 24px;
-  font-family: QuestFont;
+  font-family: 'CleanFont';
 }
 
 button.hint:hover {

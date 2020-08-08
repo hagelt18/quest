@@ -7,7 +7,6 @@ import Confetti from '../../components/confetti';
 import { useHistory } from 'react-router-dom';
 import { zeldaSecret, midiNumToNoteDictionary } from './songs';
 import { useEffect } from 'react';
-import { loadData, saveData } from '../../data/save-data';
 import StartContinue from '../../components/start-continue';
 
 function Home() {
@@ -55,16 +54,14 @@ function Home() {
     setPreviousNotes(newNotes);
     setCurrentNote(note);
     if (newNotes.join(' ') === 'A5 G5 F# G5 G5 F5 E5 F5') {
-      const data = loadData();
-      data.instrumentUnlocked = true;
-      saveData();
       setSuccess(true);
     }
   }
 
+  const onBackClicked = () => { history.goBack() }
   return (
     <div className="Piano Page">
-      <button onClick={() => { history.goBack() }}>← BACK</button>
+      {<button style={{ fontSize: '14px' }} onClick={onBackClicked}>🡄 Back</button>}
       <SoundfontProvider
         audioContext={audioContext}
         instrumentName={config.instrumentName}
@@ -73,17 +70,21 @@ function Home() {
           <div>
             <div className="mt-4">
               <DimensionsProvider>
-                {({ containerWidth }) => (
-                  <Piano
-                    noteRange={config.noteRange}
-                    // keyboardShortcuts={keyboardShortcuts}
-                    playNote={n => { playNote(n); onPlayNote(n); }}
-                    stopNote={stopNote}
-                    disabled={isLoading}
-                    width={containerWidth}
-                  />
-
-                )}
+                {({ containerWidth }) => {
+                  return (
+                    <div >
+                      {isLoading && <h3>Loading...</h3>}
+                      <Piano
+                        noteRange={config.noteRange}
+                        // keyboardShortcuts={keyboardShortcuts}
+                        playNote={n => { playNote(n); onPlayNote(n); }}
+                        stopNote={stopNote}
+                        disabled={isLoading}
+                        width={containerWidth}
+                      />
+                    </div>
+                  )
+                }}
               </DimensionsProvider>
             </div>
           </div>)}

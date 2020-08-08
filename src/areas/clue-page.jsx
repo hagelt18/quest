@@ -17,7 +17,9 @@ export const CluePage = (props) => {
   const clueData = clues.find(c => c.id === clueId)
 
   useEffect(() => {
-    dispatch({ type: 'SET_HINT', payload: clueData.hint })
+    if (clueData) {
+      dispatch({ type: 'SET_HINT', payload: clueData.hint })
+    }
     return function cleanup() {
       dispatch({ type: 'SET_HINT', payload: null })
     }
@@ -29,6 +31,17 @@ export const CluePage = (props) => {
       const nextClue = clues[clueIndex + 1];
       history.push(`/clue/${nextClue.id}`);
     }
+  }
+
+  const getPreviousClue = () => {
+    const clueIndex = clues.findIndex(c => c.id === clueId);
+    if (clueIndex - 1 >= 0) {
+      return clues[clueIndex - 1];
+    };
+  }
+
+  const onPreviousButtonClicked = () => {
+    history.push(`/clue/${previousClue.id}`);
   }
 
   const onClueSolved = (id) => {
@@ -47,10 +60,12 @@ export const CluePage = (props) => {
     return <ClueNotFound />
   }
 
+  const previousClue = getPreviousClue();
 
   return (
     <div className="ClueWrapper Page">
       <Gate>
+        {previousClue && <button style={{ fontSize: '14px' }} onClick={onPreviousButtonClicked}>🡄 Previous Clue</button>}
         {renderClue(clueData.type)}
         <br />
         <br />

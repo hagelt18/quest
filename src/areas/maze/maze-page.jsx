@@ -10,6 +10,7 @@ import gravestone from '../../assets/images/loz-gravestone.png';
 import { zeldaSecret } from '../piano/songs';
 import { PlayNotes } from '../piano/soundfont-provider'
 import StartContinue from '../../components/start-continue';
+import { loadData, saveData } from '../../data/save-data';
 
 function MazePage() {
   const [mazeEntered, setMazeEntered] = useState(false);
@@ -54,6 +55,9 @@ function MazePage() {
         expectedMoves.every((m, i) => newMoves[i] === m)) {
         setSuccess(true);
         PlayNotes(zeldaSecret, 130);
+        const data = loadData();
+        data.instrumentUnlocked = true;
+        saveData(data);
       }
       else {
         setMoves(newMoves);

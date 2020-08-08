@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-// import AnswerField from './AnswerField';
 import AnswerField from './AnswerField';
-// import Hint from './hint';
 import Confetti from './confetti';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { loadData, } from '../data/save-data';
 
 export default ({ clueData, onSolved, onNextButtonClicked }) => {
 
   const [answers, setAnswers] = useState([]);
-  const [confirmed, setConfirmed] = useState(clueData.answers ? null : true);
+  const [confirmed, setConfirmed] = useState(null);
+  const answerNeeded = () => ((clueData.answers || []).length > 0);
+
+  const data = loadData();
+  const previouslySolved = data.completedClues.some(c => c === clueData.id);
 
   useEffect(() => {
-    setAnswers([]);
-    setConfirmed(null);
+
+    setAnswers(!previouslySolved ? [] : clueData.answers);
+    setConfirmed(previouslySolved ? 'true' : null);
+    if (!answerNeeded) {
+      onSolved(clueData.id);
+    }
   }, [clueData])
 
   const onAnswerChange = index => (value) => {
@@ -51,10 +58,8 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       <div className="center">
         {answerSubmitted && !confirmed && <h3>Try again!</h3>}
         {answerSubmitted && confirmed && clueData.successMessage && <ReactMarkdown source={clueData.successMessage} />}
-        {!confirmed && <button onClick={confirmAnswers} className="primary mt-2">Submit</button>}
-        {confirmed &&
-          <button onClick={onNextButtonClicked} className="primary">Next</button>
-        }
+        {!confirmed && answerNeeded && <button onClick={confirmAnswers} className="primary mt-2">Submit</button>}
+
       </div>
     );
   }
@@ -64,7 +69,7 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       {clueData.clue && <ReactMarkdown source={clueData.clue} />}
       {clueData.question && <ReactMarkdown source={clueData.question} />}
       <br />
-      {clueData.webAnswer && (
+      {!previouslySolved && clueData.webAnswer && (
         <div>
           {/* <Hint hint={clueData.hint} /> */}
           {clueData.answers.map((a, index) =>
@@ -77,10 +82,16 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
           )}
           <br />
           {renderSubmit()}
-          <Confetti active={confirmed} />
+          {!previouslySolved && <Confetti active={confirmed} />}
           {/* <HintStateContext.Provider value={clueData.hint} /> */}
         </div>
       )}
+      {previouslySolved && (
+        clueData.answers.map(a => <h3 key={a}>{a}</h3>)
+      )}
+      {(confirmed || !answerNeeded) &&
+        <button onClick={onNextButtonClicked} className="primary mt-2">Next</button>
+      }
 
     </div >
   )

@@ -83,9 +83,7 @@ export default () => {
 
   return (
     <>
-      <button onClick={showHintButtonClicked}>
-        <CaptionImage image={QuestionBlock} caption="Hint" altText="Hint" />
-      </button>
+      <CaptionImage onClick={showHintButtonClicked} image={QuestionBlock} caption="Hint" altText="Hint" />
       {renderHintConfirmationModal()}
       {renderHintModal()}
     </>
