@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from 'react';
-import Clue from '../components/clue';
-import ClueNotFound from '../components/clue-not-found';
-import clues from '../data/clues';
-import { store } from '../data/store';
-import Gate from '../components/gate';
+import BasicClue from './basic-clue';
+import GemClue from './gem-clue';
+import ClueNotFound from './clue-not-found';
+import clues from '../../data/clues';
+import { store } from '../../data/store';
+import Gate from '../../components/gate';
 import { useHistory } from 'react-router-dom';
-import Inventory from '../components/inventory';
-import { saveProgress } from '../data/save-data';
+import Inventory from '../../components/inventory';
+import { saveProgress } from '../../data/save-data';
 
 export const CluePage = (props) => {
   const globalState = useContext(store);
@@ -50,9 +51,11 @@ export const CluePage = (props) => {
 
   const renderClue = (type) => {
     switch (type) {
+      case 'gem-clue':
+        return <GemClue clueData={clueData} onSolved={onClueSolved} onNextButtonClicked={onNextButtonClicked} />
       case 'basic':
       default:
-        return <Clue clueData={clueData} onSolved={onClueSolved} onNextButtonClicked={onNextButtonClicked} />
+        return <BasicClue clueData={clueData} onSolved={onClueSolved} onNextButtonClicked={onNextButtonClicked} />
     }
   }
 

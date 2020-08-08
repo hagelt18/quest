@@ -8,7 +8,7 @@ const Home = React.lazy(() => import('./areas/home'));
 const Test = React.lazy(() => import('./areas/test'));
 const Helpee = React.lazy(() => import('./areas/help/helpee'));
 const Helper = React.lazy(() => import('./areas/help/helper'));
-const CluePage = React.lazy(() => import('./areas/clue-page'));
+const CluePage = React.lazy(() => import('./areas/clue/clue-page'));
 const PianoPage = React.lazy(() => import('./areas/piano/piano'));
 const ComicPage = React.lazy(() => import("./areas/comic/comic-page"));
 const MazePage = React.lazy(() => import("./areas/maze/maze-page"));

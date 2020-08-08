@@ -11,6 +11,7 @@ import { zeldaSecret } from '../piano/songs';
 import { PlayNotes } from '../piano/soundfont-provider'
 import StartContinue from '../../components/start-continue';
 import { loadData, saveData } from '../../data/save-data';
+import { delay } from '../../common/delay';
 
 function MazePage() {
   const [mazeEntered, setMazeEntered] = useState(false);
@@ -38,34 +39,33 @@ function MazePage() {
     );
   }
 
-  const handleNextMove = (nextMove) => {
+  const handleNextMove = async (nextMove) => {
     setMoving(true);
-    setTimeout(() => {
-      const expectedMoves = ['L', 'U', 'R', 'D', 'R', 'U', 'R', 'D', 'L'];
-      const nextMoveIndex = moves.length;
-      if (expectedMoves[nextMoveIndex] !== nextMove) {
-        // Wrong Move
-        setSuccess(false);
-        return;
-      }
+    await delay(200);
+    const expectedMoves = ['L', 'U', 'R', 'D', 'R', 'U', 'R', 'D', 'L'];
+    const nextMoveIndex = moves.length;
+    if (expectedMoves[nextMoveIndex] !== nextMove) {
+      // Wrong Move
+      setSuccess(false);
+      return;
+    }
 
-      // Correct Move
-      const newMoves = [...moves, nextMove];
-      if (newMoves.length === expectedMoves.length &&
-        expectedMoves.every((m, i) => newMoves[i] === m)) {
-        setSuccess(true);
-        PlayNotes(zeldaSecret, 130);
-        const data = loadData();
-        data.instrumentUnlocked = true;
-        saveData(data);
-      }
-      else {
-        setMoves(newMoves);
-        setTimeout(() => {
-          setMoving(false);
-        }, 200)
-      }
-    }, 200)
+    // Correct Move
+    const newMoves = [...moves, nextMove];
+    if (newMoves.length === expectedMoves.length &&
+      expectedMoves.every((m, i) => newMoves[i] === m)) {
+      setSuccess(true);
+      PlayNotes(zeldaSecret, 130);
+      const data = loadData();
+      data.instrumentUnlocked = true;
+      saveData(data);
+    }
+    else {
+      setMoves(newMoves);
+      await delay(200);
+      setMoving(false);
+    }
+
 
   }
 

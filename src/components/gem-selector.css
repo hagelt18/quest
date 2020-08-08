@@ -1,0 +1,102 @@
+
+.diamond-wrapper{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;  
+}
+
+    #cut-diamond {
+      display:flex;
+      flex-direction:column;
+
+      border-style: solid;
+      border-width: 0 25px 25px 25px;
+      height: 0;
+      width: 50px;
+      box-sizing: content-box;
+      position: relative;
+      margin: 20px 0 50px 0;
+      margin-left: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    #cut-diamond:after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: -25px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 70px 50px 0 50px;
+    }
+
+    
+    #cut-diamond.orange {
+      border-color: transparent transparent #eb8423 transparent;
+    }
+    
+    #cut-diamond.orange:after {
+      border-color: #eb8423 transparent transparent transparent;
+    }
+    
+    #cut-diamond.red {
+      border-color: transparent transparent #e32522 transparent;
+    }
+    
+    #cut-diamond.red:after {
+      border-color: #e32522 transparent transparent transparent;
+    }
+
+    #cut-diamond.purple {
+      border-color: transparent transparent #7542f5 transparent;
+    }
+    
+    #cut-diamond.purple:after {
+      border-color: #7542f5 transparent transparent transparent;
+    }
+
+    #cut-diamond.blue {
+      border-color: transparent transparent #0d44db transparent;
+    }
+    
+    #cut-diamond.blue:after {
+      border-color: #0d44db transparent transparent transparent;
+    }
+    
+    #cut-diamond.lightblue {
+      border-color: transparent transparent #27c6db transparent;
+    }
+    
+    #cut-diamond.lightblue:after {
+      border-color: #27c6db transparent transparent transparent;
+    }
+
+    
+    #cut-diamond.yellow {
+      border-color: transparent transparent #f1f725 transparent;
+    }
+    
+    #cut-diamond.yellow:after {
+      border-color: #f1f725 transparent transparent transparent;
+    }
+
+    
+    #cut-diamond.pink {
+      border-color: transparent transparent #f58ee0 transparent;
+    }
+    
+    #cut-diamond.pink:after {
+      border-color: #f58ee0 transparent transparent transparent;
+    }
+    
+
+    
+    #cut-diamond.white {
+      border-color: transparent transparent #fafafa transparent;
+    }
+    
+    #cut-diamond.white:after {
+      border-color: #fafafa transparent transparent transparent;
+    }
+    

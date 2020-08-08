@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Hint from './hint';
 import CaptionImage from './caption-image';
 import './inventory.css'

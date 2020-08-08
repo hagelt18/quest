@@ -3,6 +3,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import Soundfont from 'soundfont-player';
+import { delay } from '../../common/delay';
 
 class SoundfontProvider extends React.Component {
   // static propTypes = {
@@ -133,9 +134,6 @@ export const PlayNotes = async (notes, delayMs) => {
   var instrument = await Soundfont.instrument(new AudioContext(), 'acoustic_grand_piano');
   for (let n of notes) {
     instrument.play(n);
-    await new Promise(r => setTimeout(r, delayMs));
+    await delay(delayMs);
   }
-  // notes.forEach(async n => {
-
-  // });
 }

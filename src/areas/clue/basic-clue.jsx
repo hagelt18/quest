@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import AnswerField from './AnswerField';
-import Confetti from './confetti';
+import AnswerField from '../../components/AnswerField';
+import Confetti from '../../components/confetti';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { loadData, } from '../data/save-data';
+import { loadData, } from '../../data/save-data';
 
 export default ({ clueData, onSolved, onNextButtonClicked }) => {
 
@@ -60,7 +60,7 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       <div className="center">
         {answerSubmitted && !confirmed && <h3>Try again!</h3>}
         {answerSubmitted && confirmed && clueData.successMessage && <ReactMarkdown source={clueData.successMessage} />}
-        {!confirmed && answerNeeded && <button onClick={confirmAnswers} className="primary mt-2">Submit</button>}
+        {!confirmed && answerNeeded() && <button onClick={confirmAnswers} className="primary mt-2">Submit</button>}
 
       </div>
     );

@@ -25,7 +25,9 @@ export default (props) => {
 
 
   const isTrueHero = (testName) => {
-    return testName && testName.toLowerCase().includes('daniella');
+    const nametoTest = testName && testName.toLowerCase();
+    const validNames = ['daniella', 'dani', 'elli', 'ellaadventure'];
+    return validNames.some(n => nametoTest);
   }
 
   const onNameSubmit = (e) => {
