@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadData, saveName } from '../data/save-data';
 
-export default (props) => {
+export default ({ children, onDeath }) => {
 
   const [name, setName] = useState();
   const [confirmed, setConfirmed] = useState(null);
@@ -60,7 +60,7 @@ export default (props) => {
     <div className="Gate">
       {renderPrompt()}
       {confirmed === false && <div>You are not the true hero. Only the chosen adventurer may enter.</div>}
-      {confirmed === true && props.children}
+      {confirmed === true && children}
     </div>
   );
 

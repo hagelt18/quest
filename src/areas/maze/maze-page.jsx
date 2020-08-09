@@ -12,12 +12,41 @@ import { PlayNotes } from '../piano/soundfont-provider'
 import StartContinue from '../../components/start-continue';
 import { loadData, saveData } from '../../data/save-data';
 import { delay } from '../../common/delay';
+import Countdown from 'react-countdown';
+import { useEffect } from 'react';
 
 function MazePage() {
   const [mazeEntered, setMazeEntered] = useState(false);
   const [moves, setMoves] = useState([]);
   const [success, setSuccess] = useState(null);
   const [moving, setMoving] = useState(null);
+  const [respawnTime, setRespawnTime] = useState(null);
+
+  useEffect(() => {
+    const data = loadData();
+    const deathDate = data.deathDate && new Date(data.deathDate);
+    const timeToSpawn = getTimeToSpawn(deathDate);
+    const stillDead = isStillDead(timeToSpawn);
+    // setDeathDate(ddate);
+    if (stillDead) {
+      setRespawnTime(timeToSpawn);
+    }
+    // setDead(stillDead);
+  }, []);
+
+  const getTimeToSpawn = (date) => {
+    const respawnTimeout = 10;
+    const responseDate = new Date(date);
+    responseDate.setSeconds(date.getSeconds() + respawnTimeout);
+    return responseDate;
+  }
+  const isStillDead = (date) => {
+    if (!date) {
+      return false;
+    }
+    var now = new Date();
+    return (now < date);
+  }
 
   const renderEntrance = () => {
     if (mazeEntered) {
@@ -46,6 +75,10 @@ function MazePage() {
     const nextMoveIndex = moves.length;
     if (expectedMoves[nextMoveIndex] !== nextMove) {
       // Wrong Move
+      const curData = loadData();
+      curData.deathDate = new Date();
+      saveData(curData);
+      setRespawnTime(getTimeToSpawn(curData.deathDate));
       setSuccess(false);
       return;
     }
@@ -156,23 +189,42 @@ function MazePage() {
         </div>
       );
     }
-    if (success === false) {
-      return (
-        <div className="center">
-          <img className="maze-result"
-            src={gravestone}
-            alt="Hero Failed"
-          />
-          <div>
-            <strong>R I P</strong>
-          </div>
-          <br />
-          <div>
-            <button onClick={reset}>Try Again</button>
-          </div>
+  }
+  const countdownRenderer = ({ hours, minutes, seconds }) => (
+    <span>
+      {seconds.toString().padStart(2, '0')}
+    </span>
+  );
+  const countDownOnComplete = () => { setRespawnTime(null) };
+
+  if (success === false || respawnTime) {
+    return (
+      <div className="center">
+        <img className="maze-result"
+          src={gravestone}
+          alt="Hero Failed"
+        />
+        <div>
+          <strong>R I P</strong>
         </div>
-      )
-    }
+        <br />
+        {respawnTime
+          ? (
+            <div>Respawn in&nbsp;
+              <Countdown
+                date={respawnTime}
+                renderer={countdownRenderer}
+                onComplete={countDownOnComplete} />
+            </div>
+          ) : (
+            <div>
+              <button onClick={reset}>Try Again</button>
+            </div>
+          )
+        }
+
+      </div>
+    )
   }
 
   return (

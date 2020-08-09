@@ -11,7 +11,7 @@ export default () => {
   const [showHint, setShowHint] = useState(null);
   const [showHintConfirmation, setShowHintConfirmation] = useState(null);
   const { state } = useContext(store);
-  let data = loadData();;
+  let data = loadData();
 
   useEffect(() => {
   }, [])
