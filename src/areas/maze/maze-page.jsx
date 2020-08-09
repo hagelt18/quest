@@ -137,6 +137,10 @@ function MazePage() {
     )
   }
 
+  const reset = () => {
+    window.location.reload(false);
+  }
+
   const renderVictory = () => {
     if (success) {
       return (
@@ -164,7 +168,7 @@ function MazePage() {
           </div>
           <br />
           <div>
-            <button onClick={() => { setMoves([]); setSuccess(null); setMazeEntered(false); }}>Try Again</button>
+            <button onClick={reset}>Try Again</button>
           </div>
         </div>
       )
