@@ -13,6 +13,7 @@ import { loadData, saveData } from '../../data/save-data';
 import { delay } from '../../common/delay';
 import Gate from '../../components/gate/gate';
 import Arrow from '../../assets/images/arrow.png';
+import Inventory from '../../components/inventory';
 
 function MazePage() {
   const [mazeEntered, setMazeEntered] = useState(false);
@@ -207,6 +208,7 @@ function MazePage() {
         {renderEntrance()}
         {renderMaze()}
         {renderResult()}
+        <Inventory />
       </div>
     </Gate>
   );

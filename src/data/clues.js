@@ -128,7 +128,7 @@ const clues = [
     clue: 'Now that you possess all three **keys**, you can enter the Echo Temple where you will find the gems. To enter the temple, you must return **Home** and carry with you all three artificacts. When you walk through the door, you will not be in your real home, but an echo of itself in another plane of existence. Prepare yourself for the final trial: **The Echo Temple**',
     question: 'Collect the three **magic gems** and enter them below',
     answers: ['orange', 'lightblue', 'purple'],
-    successMessage: 'Congratulations! You have collected all of the magic gems and you are now ready to face the wizard and save the prince! Go forth brave hero, to the Evil Wizard\'s Tower\r\n\r\n[821 S Marquette Ave, Minneapolis, MN 55402](https://goo.gl/maps/pXPHWCUb7yCcu2QJA)',
+    successMessage: 'Congratulations! You have collected all of the magic gems and you are now ready to face the wizard and save the prince! Go forth brave hero, to the Evil Wizard\'s Tower!\r\n\r\n[821 S Marquette Ave, Minneapolis, MN 55402](https://goo.gl/maps/pXPHWCUb7yCcu2QJA)',
     webAnswer: true,
     hint: 'To answer this you must find Magic Gems within the Echo Temple.'
   }

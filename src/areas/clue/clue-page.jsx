@@ -70,9 +70,7 @@ export const CluePage = (props) => {
       <Gate>
         {previousClue && <button style={{ fontSize: '14px' }} onClick={onPreviousButtonClicked}>🡄 Previous Clue</button>}
         {renderClue(clueData.type)}
-        <br />
-        <br />
-        <br />
+
         <Inventory />
       </Gate>
     </div>

@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 import { zeldaSecret, midiNumToNoteDictionary } from './songs';
 import { useEffect } from 'react';
 import StartContinue from '../../components/start-continue';
+import Inventory from '../../components/inventory';
 
 function Home() {
   const history = useHistory();
@@ -101,6 +102,7 @@ function Home() {
         )}
       </div>
       <Confetti active={success} />
+      <Inventory />
     </div>
   );
 }

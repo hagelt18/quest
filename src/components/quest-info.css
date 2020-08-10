@@ -1,0 +1,8 @@
+.quest-info {
+  background-color: var(--backgroundColor);
+  color: white;
+  padding: 8px;
+  border-width: 0px;
+  border-style: solid;
+  border-radius: 10px;
+}

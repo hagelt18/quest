@@ -1,11 +1,12 @@
 import React from 'react';
 import OldWoman from '../assets/images/old-woman.png';
 import Fire from '../assets/images/fire.gif';
+import './quest-info.css';
 
 export default () => {
 
   return (
-    <div>
+    <div className="quest-info">
       <h2>Goal</h2>
       <p>Find the <strong>magic gems</strong>, use them to defeat the Wizard, and save the Prince!</p>
       <h2>Words of Wisdom</h2>
@@ -28,9 +29,10 @@ export default () => {
       <br />
       <div>
         <ul className="diamondlist">
-          <li>The Google is allowed</li>
+          <li>The Google is allowed.</li>
           <li>If you are stuck, take a look in your <strong>inventory bag</strong> for help.</li>
-          <li>Have fun</li>
+          <li>All online answers are case insensitive.</li>
+          <li>Have fun!</li>
         </ul >
       </div>
     </div >
