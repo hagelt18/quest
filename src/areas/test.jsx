@@ -2,7 +2,7 @@ import React from 'react';
 
 function Test() {
   return (
-    <div className="Test">
+    <div className="Test" style={{ fontFamily: 'arial' }}>
       THIS IS A TEST
       ← → ↑ ↓ ⟵ ⟶ ⇦ ⇨ ⇧ ⇩ ⬅ ( ⮕ ➡ ) ⬆ ⬇ 🡐 🡒 🡑 🡓
       Double Points Arrows
