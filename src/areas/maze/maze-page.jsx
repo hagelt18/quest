@@ -119,6 +119,7 @@ function MazePage() {
     if (!mazeEntered || success !== null) {
       return null;
     }
+
     return (
       <div>
         {GetMazeImage()}
@@ -127,23 +128,23 @@ function MazePage() {
           <div className='crow'>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('U')}>🡅</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('U')}>⬆</button>
             </div>
             <div className='ctile'>&nbsp;</div>
           </div>
           <div className='crow'>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('L')}>🡄</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('L')}>⬅</button>
             </div>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('R')}>🡆</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('R')}>➡</button>
             </div>
           </div>
           <div className='crow'>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('D')}>🡇</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('D')}>⬇</button>
             </div>
             <div className='ctile'>&nbsp;</div>
           </div>
