@@ -1,5 +1,5 @@
 import React from 'react';
-import Gate from '../../components/gate';
+import Gate from '../../components/gate/gate';
 import { useHistory } from 'react-router';
 
 export default async () => {

@@ -3,15 +3,18 @@ import Confetti from '../../components/confetti';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import GemSelector from '../../components/gem-selector';
+import { loadData, saveData } from '../../data/save-data';
 
 export default ({ clueData, onSolved, onNextButtonClicked }) => {
 
   const [answers, setAnswers] = useState([]);
   const [confirmed, setConfirmed] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     setAnswers([]);
     setConfirmed(null);
+    setLoaded(true);
   }, [clueData])
 
   const onAnswerChange = index => (value) => {
@@ -34,26 +37,27 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
         break;
       }
     }
-    setConfirmed(correct);
+
+
     if (correct) {
+      setConfirmed(correct);
       onSolved(clueData.id);
     } else {
-      setAnswers([null, null, null]);
+      //setAnswers([null, null, null]);
+      const curData = loadData();
+      curData.deathDate = new Date();
+      saveData(curData);
+      window.location.reload(false);
     }
   }
 
 
   const renderSubmit = () => {
-
     const answerSubmitted = clueData.answers && confirmed != null; // If there are answers to submit, and one has been submitted (confirmed will be true or false)
     return (
-      <div>
-        <div className="center">
-          {answerSubmitted && !confirmed && <h3>Try again!</h3>}
-          {!confirmed && <button onClick={confirmAnswers} className="primary mt-2">Submit</button>}
-        </div>
+      <>
         {answerSubmitted && confirmed && clueData.successMessage && <ReactMarkdown source={clueData.successMessage} />}
-      </div>
+      </>
     );
   }
 
@@ -65,6 +69,10 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       confirmAnswers(newAnswers);
     }
   }
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <div>
       {clueData.clue && <ReactMarkdown source={clueData.clue} />}
@@ -73,7 +81,7 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       {clueData.webAnswer && (
         <div>
 
-          <div className="diamond-wrapper">
+          <div className="diamond-wrapper mb-4">
 
             <GemSelector start="red" value={answers[0]} onChange={v => GemValueChanged(0, v)}></GemSelector>
             <GemSelector start="blue" value={answers[1]} onChange={v => GemValueChanged(1, v)}></GemSelector>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Gate from '../../components/gate';
+import Gate from '../../components/gate/gate';
 import { useHistory } from 'react-router';
 import Talk from "talkjs";
 import { getHelper, getHelpee, getInbox } from './talkjs-utility';

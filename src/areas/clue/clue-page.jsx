@@ -4,7 +4,7 @@ import GemClue from './gem-clue';
 import ClueNotFound from './clue-not-found';
 import clues from '../../data/clues';
 import { store } from '../../data/store';
-import Gate from '../../components/gate';
+import Gate from '../../components/gate/gate';
 import { useHistory } from 'react-router-dom';
 import Inventory from '../../components/inventory';
 import { saveProgress } from '../../data/save-data';

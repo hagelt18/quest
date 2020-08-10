@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { loadData, saveName } from '../data/save-data';
+import { loadData, saveName } from '../../data/save-data';
 
-export default ({ children, onDeath }) => {
+export default ({ children }) => {
 
+  const [loaded, setLoaded] = useState(false);
   const [name, setName] = useState();
   const [confirmed, setConfirmed] = useState(null);
 
@@ -15,7 +16,7 @@ export default ({ children, onDeath }) => {
         setConfirmed(true);
       }
     }
-
+    setLoaded(true);
   }, [])
 
 
@@ -56,12 +57,16 @@ export default ({ children, onDeath }) => {
   }
 
 
+  if (!loaded) {
+    return null
+  }
+
   return (
-    <div className="Gate">
+    <>
       {renderPrompt()}
       {confirmed === false && <div>You are not the true hero. Only the chosen adventurer may enter.</div>}
       {confirmed === true && children}
-    </div>
+    </>
   );
 
 };

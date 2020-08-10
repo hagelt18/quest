@@ -10,11 +10,13 @@ const StartContinue = ({ primary }) => {
   const isFirstClue = clues[0].id === nextClue;
 
   return (
-    <Link to={`/clue/${nextClue}`}>
-      <button className={`center ${primary ? 'primary' : ''}`}>
-        {isFirstClue ? 'Start' : 'Continue'}
-      </button>
-    </Link>
+    <div className="center">
+      <Link to={`/clue/${nextClue}`}>
+        <button className={primary ? 'primary' : ''}>
+          {isFirstClue ? 'Start' : 'Continue'}
+        </button>
+      </Link>
+    </div>
   )
 }
 

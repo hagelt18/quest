@@ -6,46 +6,23 @@ import lostwoodsRight from '../../assets/images/lostwoods-right.png';
 import lostwoodsTop from '../../assets/images/lostwoods-top.png';
 import lostwoodsBottom from '../../assets/images/lostwoods-bottom.png';
 import heroVictoryMusicBox from '../../assets/images/hero-victory-musicbox.png';
-import gravestone from '../../assets/images/loz-gravestone.png';
 import { zeldaSecret } from '../piano/songs';
 import { PlayNotes } from '../piano/soundfont-provider'
 import StartContinue from '../../components/start-continue';
 import { loadData, saveData } from '../../data/save-data';
 import { delay } from '../../common/delay';
-import Countdown from 'react-countdown';
-import { useEffect } from 'react';
+import Gate from '../../components/gate/gate';
 
 function MazePage() {
   const [mazeEntered, setMazeEntered] = useState(false);
   const [moves, setMoves] = useState([]);
   const [success, setSuccess] = useState(null);
   const [moving, setMoving] = useState(null);
-  const [respawnTime, setRespawnTime] = useState(null);
 
-  useEffect(() => {
-    const data = loadData();
-    const deathDate = data.deathDate && new Date(data.deathDate);
-    const timeToSpawn = getTimeToSpawn(deathDate);
-    const stillDead = isStillDead(timeToSpawn);
-    // setDeathDate(ddate);
-    if (stillDead) {
-      setRespawnTime(timeToSpawn);
-    }
-    // setDead(stillDead);
-  }, []);
 
-  const getTimeToSpawn = (date) => {
-    const respawnTimeout = 10;
-    const responseDate = new Date(date);
-    responseDate.setSeconds(date.getSeconds() + respawnTimeout);
-    return responseDate;
-  }
-  const isStillDead = (date) => {
-    if (!date) {
-      return false;
-    }
-    var now = new Date();
-    return (now < date);
+  const handleEnterMaze = () => {
+    setSuccess(null);
+    setMazeEntered(true);
   }
 
   const renderEntrance = () => {
@@ -55,15 +32,13 @@ function MazePage() {
     return (
       <div className="center">
         <button
-          // style={{ textAlign: 'center', marginLeft: 'auto', marginRight: 'auto', display: 'block', width: '160px' }}
-
-          onClick={() => { setSuccess(null); setMazeEntered(true) }}>
+          onClick={handleEnterMaze}>
           <img
             src={entrance}
             alt="Maze Entrance"
           />
         </button>
-        <p>ENTER</p>
+        <div><button onClick={handleEnterMaze}>ENTER</button></div>
       </div>
     );
   }
@@ -78,8 +53,7 @@ function MazePage() {
       const curData = loadData();
       curData.deathDate = new Date();
       saveData(curData);
-      setRespawnTime(getTimeToSpawn(curData.deathDate));
-      setSuccess(false);
+      window.location.reload(false);
       return;
     }
 
@@ -174,7 +148,7 @@ function MazePage() {
     window.location.reload(false);
   }
 
-  const renderVictory = () => {
+  const renderResult = () => {
     if (success) {
       return (
         <div className="center">
@@ -189,50 +163,27 @@ function MazePage() {
         </div>
       );
     }
-  }
-  const countdownRenderer = ({ hours, minutes, seconds }) => (
-    <span>
-      {seconds.toString().padStart(2, '0')}
-    </span>
-  );
-  const countDownOnComplete = () => { setRespawnTime(null) };
 
-  if (success === false || respawnTime) {
-    return (
-      <div className="center">
-        <img className="maze-result"
-          src={gravestone}
-          alt="Hero Failed"
-        />
-        <div>
-          <strong>R I P</strong>
+    if (success === false) {
+      return (
+        <div className="center">
+          <div>
+            <button onClick={reset}>Try Again</button>
+          </div>
         </div>
-        <br />
-        {respawnTime
-          ? (
-            <div>Respawn in&nbsp;
-              <Countdown
-                date={respawnTime}
-                renderer={countdownRenderer}
-                onComplete={countDownOnComplete} />
-            </div>
-          ) : (
-            <div>
-              <button onClick={reset}>Try Again</button>
-            </div>
-          )
-        }
+      )
+    }
 
-      </div>
-    )
   }
 
   return (
-    <div className="Maze Page">
-      {renderEntrance()}
-      {renderMaze()}
-      {renderVictory()}
-    </div>
+    <Gate>
+      <div className="Maze Page">
+        {renderEntrance()}
+        {renderMaze()}
+        {renderResult()}
+      </div>
+    </Gate>
   );
 }
 
