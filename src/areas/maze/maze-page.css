@@ -16,6 +16,21 @@
   margin: 0px;
 }
 
+.controller img {  
+  height: 32px;
+  width: 32px;
+}
+
+.controller img.up {
+  transform: rotate(180deg);
+}
+.controller img.right {
+  transform: rotate(270deg);
+}
+.controller img.left {
+  transform: rotate(90deg);
+}
+
 .controller .ctile:focus {
   /* color: blue; */
   outline: 0;

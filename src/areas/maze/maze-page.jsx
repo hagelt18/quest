@@ -12,6 +12,7 @@ import StartContinue from '../../components/start-continue';
 import { loadData, saveData } from '../../data/save-data';
 import { delay } from '../../common/delay';
 import Gate from '../../components/gate/gate';
+import Arrow from '../../assets/images/arrow.png';
 
 function MazePage() {
   const [mazeEntered, setMazeEntered] = useState(false);
@@ -128,23 +129,36 @@ function MazePage() {
           <div className='crow'>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('U')}>⬆</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('U')}>
+                {/* ⯅ */}
+                <img className='up' src={Arrow}></img>
+              </button>
             </div>
             <div className='ctile'>&nbsp;</div>
           </div>
           <div className='crow'>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('L')}>⬅</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('L')}>
+                {/* ⯇ */}
+                <img className='left' src={Arrow}></img>
+              </button>
             </div>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('R')}>➡</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('R')}>
+                {/* ⯈ */}
+                <img className='right' src={Arrow}></img>
+              </button>
             </div>
           </div>
           <div className='crow'>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button disabled={moving} onClick={() => controllerButtonClicked('D')}>⬇</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('D')}>
+                {/* ⯆ */}
+                <img className='down' src={Arrow}></img>
+              </button>
+
             </div>
             <div className='ctile'>&nbsp;</div>
           </div>
