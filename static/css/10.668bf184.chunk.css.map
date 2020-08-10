@@ -1,0 +1,1 @@
+{"version":3,"sources":["quest-info.css"],"names":[],"mappings":"AAAA,YACE,uCAAwC,CACxC,UAAY,CACZ,WAAY,CACZ,cAAiB,CACjB,kBAAmB,CACnB,kBACF","file":"10.668bf184.chunk.css","sourcesContent":[".quest-info {\r\n  background-color: var(--backgroundColor);\r\n  color: white;\r\n  padding: 8px;\r\n  border-width: 0px;\r\n  border-style: solid;\r\n  border-radius: 10px;\r\n}"]}
