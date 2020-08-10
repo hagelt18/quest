@@ -1,0 +1,2 @@
+.controller button:disabled{color:grey}.controller .ctile{height:36px;width:36px;display:flex;flex-direction:column;font-size:32px;margin:0}.controller .ctile:focus{outline:0}.controller .crow{text-align:center;justify-content:center;display:flex;flex-direction:row}.fadeOut{opacity:0;transition:width .2s .2s,height .2s .2s,opacity .2s}.fadeIn{opacity:1;transition:width .2s,height .2s,opacity .2s .2s}.maze-result{margin-top:20px;width:54px}
+/*# sourceMappingURL=8.59121c16.chunk.css.map */
