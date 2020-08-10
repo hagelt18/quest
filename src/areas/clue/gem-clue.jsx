@@ -17,12 +17,6 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
     setLoaded(true);
   }, [clueData])
 
-  const onAnswerChange = index => (value) => {
-    var newAnswers = [...answers];
-    newAnswers[index] = value;
-    setAnswers(newAnswers);
-  }
-
   const confirmAnswers = (currentAnswers) => {
     var correct = true;
     for (let i = 0; i < clueData.answers.length; i++) {
@@ -50,7 +44,6 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
       window.location.reload(false);
     }
   }
-
 
   const renderSubmit = () => {
     const answerSubmitted = clueData.answers && confirmed != null; // If there are answers to submit, and one has been submitted (confirmed will be true or false)
