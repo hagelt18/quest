@@ -62,7 +62,7 @@ function Home() {
   const onBackClicked = () => { history.goBack() }
   return (
     <div className="Piano Page">
-      {<button style={{ fontSize: '14px' }} onClick={onBackClicked}>🡄 Back</button>}
+      {<button style={{ fontSize: '14px' }} onClick={onBackClicked}>← Back</button>}
       <SoundfontProvider
         audioContext={audioContext}
         instrumentName={config.instrumentName}

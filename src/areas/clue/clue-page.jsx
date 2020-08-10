@@ -68,7 +68,12 @@ export const CluePage = (props) => {
   return (
     <div className="ClueWrapper Page">
       <Gate>
-        {previousClue && <button style={{ fontSize: '14px' }} onClick={onPreviousButtonClicked}>🡄 Previous Clue</button>}
+        {previousClue &&
+          (
+            <button style={{ fontSize: '14px' }} onClick={onPreviousButtonClicked}>
+              ← Previous Clue
+            </button>
+          )}
         {renderClue(clueData.type)}
 
         <Inventory />

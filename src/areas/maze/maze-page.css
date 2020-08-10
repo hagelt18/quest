@@ -22,13 +22,13 @@
 }
 
 .controller img.up {
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 .controller img.right {
-  transform: rotate(270deg);
+  transform: rotate(180deg);
 }
-.controller img.left {
-  transform: rotate(90deg);
+.controller img.down {
+  transform: rotate(270deg);
 }
 
 .controller .ctile:focus {
