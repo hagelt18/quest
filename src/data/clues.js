@@ -38,7 +38,7 @@ const clues = [
   {
     id: '31a874c0-1a05-45ea-82e2-ea79adcf03a3',
     type: 'basic',
-    clue: 'Filled with new wisdom and vigor, you are now ready to embark on a journey to three locations. Each one will provide you with an **key** which will guide you to one of the **magic gems**.',
+    clue: 'Filled with new wisdom and vigor, you are now ready to embark on a journey to three locations. Each one will provide you with a **key** which will guide you to one of the **magic gems**.',
     question: null,
     answers: [],
     webAnswer: true,
@@ -59,7 +59,7 @@ const clues = [
     id: '5aa10399-b215-4b90-bf48-49482790ab89',
     type: 'basic',
     clue: 'The temple here is closed, but you can still find a wealth of information just near the entrance.',
-    question: 'They say this place is A _____ in the Middle of the City.',
+    question: 'They say this place is A \_\_\_\_\_ in the Middle of the City.',
     image: 'fiveelements',
     answers: ['marsh'],
     webAnswer: true,
@@ -68,7 +68,7 @@ const clues = [
   {
     id: '7205280c-56f8-4910-8cde-db69277f030b',
     type: 'basic',
-    clue: 'Here in this sanctuary for nature, we remember all those who fought to protect it. Follow the shortest path, keep the water to your left. As you travel through it, you will find many resting points which pay tribute to these individuals. One among them once said, \r\n\r\n"Savour the Past\r\nLive for today\r\nLook forward to the future"',
+    clue: 'Here in this sanctuary for nature, we remember all those who fought to protect it. Follow the shortest path, keep the water to your left. As you travel the path, you will find many resting points which pay tribute to these individuals. One among them once said, \r\n\r\n\r\n\r\n"Savour the Past\r\n\r\nLive for today\r\n\r\nLook forward to the future"',
     question: 'What was their name?',
     answers: ['dorothy', 'holstrom'],
     webAnswer: true,
@@ -78,7 +78,7 @@ const clues = [
     id: '6e533cb1-63ef-4939-9f92-57220d63ad82',
     type: 'basic',
     clue: 'Legends tell of a benevolent Sorceress who once lived in this wooded sanctuary. They say she returns to assist those in need who are pure of heart. If the stories are true, she rests in at the heart of wood lake. Find her and ask for her aid.',
-    question: '',
+    question: 'What is her name?',
     answers: ['yentihw'],
     webAnswer: true,
     hint: 'If only there was some way you could walk across the water to the middle of the lake.'
@@ -97,11 +97,11 @@ const clues = [
     id: 'cf6e3e8b-ab3d-494d-a912-f91f494c4e96',
     type: 'basic',
     clue: 'Here in this grand bazaar of amusements awaits one of the three **keys** that will aid you in your quest. Worry not, brave hero...there are many in this land who would see to your success. ',
-    question: 'See the store merchant and ask them for that which was left for you to **pick up**.',
+    question: 'See the store merchant and ask them for that which was left for you to **pick up**.\r\n\r\nEnter the barcode.',
     image: 'barcode',
     answers: ['711719519065'],
     webAnswer: true,
-    hint: 'Enter the barcode number for the item you picked up. If you didn’t get something, try the Help Whistle in your inventory.'
+    hint: 'If you didn’t get something, try the Help Whistle in your inventory.'
   },
   {
     id: '75beaf1b-66d2-44a4-95fb-2867ebbae0c6',
@@ -125,11 +125,12 @@ const clues = [
   {
     id: 'c1bf0873-02ad-4f14-8858-9fa25a8583f2',
     type: 'gem-clue',
-    clue: 'Now that you possess all three **keys**, you can enter the Echo Temple where you will find the gems. To enter the temple, you must return home and carry with you all three artificacts. When you walk through the door, you will not be in your real home, but an echo of itself in another plane of existence. Prepare yourself for the final trial: **The Echo Temple**',
+    clue: 'Now that you possess all three **keys**, you can enter the Echo Temple where you will find the gems. To enter the temple, you must return **Home** and carry with you all three artificacts. When you walk through the door, you will not be in your real home, but an echo of itself in another plane of existence. Prepare yourself for the final trial: **The Echo Temple**',
     question: 'Collect the three **magic gems** and enter them below',
     answers: ['orange', 'lightblue', 'purple'],
     successMessage: 'Congratulations! You have collected all of the magic gems and you are now ready to face the wizard and save the prince! Go forth brave hero, to the Evil Wizard\'s Tower\r\n\r\n[821 S Marquette Ave, Minneapolis, MN 55402](https://goo.gl/maps/pXPHWCUb7yCcu2QJA)',
     webAnswer: true,
+    hint: 'To answer this you must find Magic Gems within the Echo Temple.'
   }
 ]
 

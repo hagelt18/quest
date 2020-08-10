@@ -95,6 +95,7 @@
 
     
     #cut-diamond.white {
+      color:  #27c6db; /*text color can't be white on white*/
       border-color: transparent transparent #fafafa transparent;
     }
     
