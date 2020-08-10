@@ -2,6 +2,11 @@
   
 }
 
+.controller button:disabled {
+  color: gray;
+}
+
+
 .controller .ctile {
   height: 36px;
   width: 36px;

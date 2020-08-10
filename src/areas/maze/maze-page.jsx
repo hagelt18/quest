@@ -19,6 +19,7 @@ function MazePage() {
   const [success, setSuccess] = useState(null);
   const [moving, setMoving] = useState(null);
 
+  const immediateDeath = false;
 
   const handleEnterMaze = () => {
     setSuccess(null);
@@ -43,29 +44,37 @@ function MazePage() {
     );
   }
 
+  const die = () => {
+    const curData = loadData();
+    curData.deathDate = new Date();
+    saveData(curData);
+    window.location.reload(false);
+  }
   const handleNextMove = async (nextMove) => {
     setMoving(true);
     await delay(200);
     const expectedMoves = ['L', 'U', 'R', 'D', 'R', 'U', 'R', 'D', 'L'];
     const nextMoveIndex = moves.length;
-    if (expectedMoves[nextMoveIndex] !== nextMove) {
-      // Wrong Move
-      const curData = loadData();
-      curData.deathDate = new Date();
-      saveData(curData);
-      window.location.reload(false);
+
+    if (immediateDeath && expectedMoves[nextMoveIndex] !== nextMove) {
+      die();
       return;
     }
 
-    // Correct Move
     const newMoves = [...moves, nextMove];
-    if (newMoves.length === expectedMoves.length &&
-      expectedMoves.every((m, i) => newMoves[i] === m)) {
-      setSuccess(true);
-      PlayNotes(zeldaSecret, 130);
-      const data = loadData();
-      data.instrumentUnlocked = true;
-      saveData(data);
+    if (newMoves.length === expectedMoves.length) {
+      // All Moves Correct
+      if (expectedMoves.every((m, i) => newMoves[i] === m)) {
+        setSuccess(true);
+        PlayNotes(zeldaSecret, 130);
+        const data = loadData();
+        data.instrumentUnlocked = true;
+        saveData(data);
+      }
+      else {
+        die();
+        return;
+      }
     }
     else {
       setMoves(newMoves);
@@ -118,23 +127,23 @@ function MazePage() {
           <div className='crow'>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button onClick={() => controllerButtonClicked('U')}>🡅</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('U')}>🡅</button>
             </div>
             <div className='ctile'>&nbsp;</div>
           </div>
           <div className='crow'>
             <div className='ctile'>
-              <button onClick={() => controllerButtonClicked('L')}>🡄</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('L')}>🡄</button>
             </div>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button onClick={() => controllerButtonClicked('R')}>🡆</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('R')}>🡆</button>
             </div>
           </div>
           <div className='crow'>
             <div className='ctile'>&nbsp;</div>
             <div className='ctile'>
-              <button onClick={() => controllerButtonClicked('D')}>🡇</button>
+              <button disabled={moving} onClick={() => controllerButtonClicked('D')}>🡇</button>
             </div>
             <div className='ctile'>&nbsp;</div>
           </div>
@@ -179,6 +188,7 @@ function MazePage() {
   return (
     <Gate>
       <div className="Maze Page">
+        <div className="center mb-4" style={{ fontSize: '14px' }}>One wrong turn could be your doom.</div>
         {renderEntrance()}
         {renderMaze()}
         {renderResult()}

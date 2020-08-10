@@ -6,7 +6,9 @@ import './header.css';
 export default () => {
     return (
         <div className="Header">
-            <Link to="/"><img className="Logo" src={Logo} alt="Logo" /></Link>
+            <div className="center">
+                <Link to="/"><img className="Logo" src={Logo} alt="Logo" /></Link>
+            </div>
         </div>
     )
 }
