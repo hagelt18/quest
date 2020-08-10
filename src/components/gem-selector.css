@@ -19,6 +19,8 @@
       margin-left: 10px;
       margin-right: 10px;
       cursor: pointer;
+      font-size: 22px;
+      text-align: right;
     }
     #cut-diamond:after {
       content: "";

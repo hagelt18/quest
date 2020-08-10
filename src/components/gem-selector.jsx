@@ -47,7 +47,9 @@ const GemSelector = ({ start, value, onChange }) => {
   }
 
   return (
-    <div id="cut-diamond" className={value || currentValue} onClick={onGemClicked} />
+    <div id="cut-diamond" className={value || currentValue} onClick={onGemClicked} >
+      {value ? '✧' : null}
+    </div>
   )
 }
 
