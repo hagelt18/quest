@@ -167,3 +167,14 @@ body {
 .App-Content {  
   min-height: 100%
 }
+
+
+.fadeOut{
+  opacity:0;
+  transition: width 0.2s 0.2s, height 0.2s 0.2s, opacity 0.2s;
+
+}
+.fadeIn{
+  opacity:1;
+  transition: width 0.2s, height 0.2s, opacity 0.2s 0.2s;
+}

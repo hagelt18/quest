@@ -4,12 +4,16 @@ import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import GemSelector from '../../components/gem-selector';
 import { loadData, saveData } from '../../data/save-data';
+import { Row, Col } from 'react-bootstrap';
 
 export default ({ clueData, onSolved, onNextButtonClicked }) => {
 
   const [answers, setAnswers] = useState([]);
   const [confirmed, setConfirmed] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [showZip, setShowZip] = useState(false);
+  const [showZap, setShowZap] = useState(false);
+  const [showZop, setShowZop] = useState(false);
 
   useEffect(() => {
     setAnswers([]);
@@ -17,7 +21,25 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
     setLoaded(true);
   }, [clueData])
 
+  useEffect(() => {
+    if (confirmed) {
+      setTimeout(() => {
+        setShowZip(true);
+      }, 100);
+      setTimeout(() => {
+        setShowZap(true);
+      }, 1100);
+      setTimeout(() => {
+        setShowZop(true);
+      }, 2100);
+    }
+  }, [confirmed])
   const confirmAnswers = (currentAnswers) => {
+
+    //TEST
+    // setConfirmed(true);
+    // return;
+
     var correct = true;
     for (let i = 0; i < clueData.answers.length; i++) {
       if (!currentAnswers[i]) {
@@ -46,12 +68,14 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
   }
 
   const renderSubmit = () => {
-    const answerSubmitted = clueData.answers && confirmed != null; // If there are answers to submit, and one has been submitted (confirmed will be true or false)
-    return (
-      <>
-        {answerSubmitted && confirmed && clueData.successMessage && <ReactMarkdown source={clueData.successMessage} />}
-      </>
-    );
+    if (confirmed && clueData.successMessage) {
+      return (
+        <>
+          <ReactMarkdown source={clueData.successMessage} />
+        </>
+      );
+    }
+
   }
 
   const GemValueChanged = (index, value) => {
@@ -75,15 +99,27 @@ export default ({ clueData, onSolved, onNextButtonClicked }) => {
         <div>
 
           <div className="diamond-wrapper mb-4">
-
             <GemSelector start="red" value={answers[0]} onChange={v => GemValueChanged(0, v)}></GemSelector>
             <GemSelector start="blue" value={answers[1]} onChange={v => GemValueChanged(1, v)}></GemSelector>
             <GemSelector start="yellow" value={answers[2]} onChange={v => GemValueChanged(2, v)} ></GemSelector>
           </div>
 
           <br />
-          {renderSubmit()}
-          {<Confetti active={confirmed} />}
+          <div>
+            <Row className={confirmed ? 'fadeIn mb-4' : 'fadeOut'}>
+              <Col className="center">
+                <h3 className={showZip ? 'fadeIn' : 'fadeOut'}>ZIP</h3>
+              </Col>
+              <Col className="center">
+                <h3 className={showZap ? 'fadeIn' : 'fadeOut'}>ZAP</h3>
+              </Col>
+              <Col className="center">
+                <h3 className={showZop ? 'fadeIn' : 'fadeOut'}>ZOP</h3>
+              </Col>
+            </Row>
+            {renderSubmit()}
+            {/* {<Confetti active={confirmed} />} */}
+          </div>
         </div>
       )}
 

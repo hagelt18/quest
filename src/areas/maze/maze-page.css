@@ -43,16 +43,6 @@
   flex-direction: row;
 }
 
-.fadeOut{
-  opacity:0;
-  transition: width 0.2s 0.2s, height 0.2s 0.2s, opacity 0.2s;
-
-}
-.fadeIn{
-  opacity:1;
-  transition: width 0.2s, height 0.2s, opacity 0.2s 0.2s;
-}
-
 .maze-result {
   margin-top: 20px;
   width: 54px;
