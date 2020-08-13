@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e75b5f6e32b91affb4c8a4596bea91da",
+    "revision": "e051e3bf810456ebbcd1e7be5b6e5abb",
     "url": "/quest/index.html"
   },
   {
-    "revision": "0b2c54a0967e85e14973",
+    "revision": "98b58cbc32a0c131c4f5",
     "url": "/quest/static/css/10.668bf184.chunk.css"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quest/static/css/11.908eb849.chunk.css"
   },
   {
-    "revision": "f54f303d1757962fa0cf",
+    "revision": "c877dadf65d66aead66b",
     "url": "/quest/static/css/2.b4345cea.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quest/static/css/7.af3c1da9.chunk.css"
   },
   {
-    "revision": "894ef59d8724b1cc5243",
+    "revision": "76e55ae60e016d99a10a",
     "url": "/quest/static/css/8.eee3e66e.chunk.css"
   },
   {
@@ -40,28 +40,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quest/static/js/1.a367084c.chunk.js"
   },
   {
-    "revision": "0b2c54a0967e85e14973",
-    "url": "/quest/static/js/10.b43746dd.chunk.js"
+    "revision": "98b58cbc32a0c131c4f5",
+    "url": "/quest/static/js/10.4a98e5d9.chunk.js"
   },
   {
     "revision": "f136617b644345bc1094",
     "url": "/quest/static/js/11.dca50eb7.chunk.js"
   },
   {
-    "revision": "36e0ddafe2ff3bed0acc",
-    "url": "/quest/static/js/12.3c3a04d3.chunk.js"
+    "revision": "ad23c483025828f7f04b",
+    "url": "/quest/static/js/12.6394ffec.chunk.js"
   },
   {
-    "revision": "2aafbc5d19b563353ade",
-    "url": "/quest/static/js/13.3ca6d56f.chunk.js"
+    "revision": "bf4be5b3a06e3b91c49f",
+    "url": "/quest/static/js/13.7adaa1a7.chunk.js"
   },
   {
-    "revision": "0db6dd810c192cf7ebd0",
-    "url": "/quest/static/js/14.b3aed5dd.chunk.js"
+    "revision": "bb5f26edfbf37d36a7ad",
+    "url": "/quest/static/js/14.4dcd0e21.chunk.js"
   },
   {
-    "revision": "06ce9468266420cdc398",
-    "url": "/quest/static/js/15.e8f7d80d.chunk.js"
+    "revision": "ad1ee48f8fda9eacb0f3",
+    "url": "/quest/static/js/15.dfb57e62.chunk.js"
   },
   {
     "revision": "70435207f00ce166050b",
@@ -76,8 +76,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quest/static/js/17.95adff56.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f54f303d1757962fa0cf",
-    "url": "/quest/static/js/2.0081b32b.chunk.js"
+    "revision": "c877dadf65d66aead66b",
+    "url": "/quest/static/js/2.e61ac5be.chunk.js"
   },
   {
     "revision": "42a16620831340abab7b",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quest/static/js/7.71301e6a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "894ef59d8724b1cc5243",
-    "url": "/quest/static/js/8.025b791f.chunk.js"
+    "revision": "76e55ae60e016d99a10a",
+    "url": "/quest/static/js/8.6fe5fdc3.chunk.js"
   },
   {
     "revision": "c1941931f131ba564676",
@@ -112,8 +112,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quest/static/js/main.63d59a5b.chunk.js"
   },
   {
-    "revision": "b2349486dd9bb8ed2736",
-    "url": "/quest/static/js/runtime-main.3c96aa08.js"
+    "revision": "6c008993ddd9f31e8e31",
+    "url": "/quest/static/js/runtime-main.4b49cf49.js"
   },
   {
     "revision": "38c516075c4966be487ed354a1a8f1f0",
@@ -124,8 +124,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quest/static/media/CaviarDreams.3670aa49.ttf"
   },
   {
-    "revision": "79c0b93d8240cca461b428ecfdaf2689",
-    "url": "/quest/static/media/comic.79c0b93d.png"
+    "revision": "f66763c34606c7cbf512df4375983527",
+    "url": "/quest/static/media/comic.f66763c3.png"
   },
   {
     "revision": "6184e0f070187c641289b456145ce2ad",
