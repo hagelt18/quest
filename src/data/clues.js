@@ -15,7 +15,7 @@ const clues = [
     answers: ['caribou', 'coffee'],
     successMessage: '[7950 Penn Ave S, Bloomington, MN 55431](https://goo.gl/maps/vpSBssmodBDa4Ezr7)',
     webAnswer: true,
-    hint: 'Building number of your favorite place to go in the morning'
+    hint: 'Name of your favorite place to go in the morning'
   },
   {
     id: '1f24fa80-6332-4ce6-87d8-cb00ce022226',
@@ -60,10 +60,18 @@ const clues = [
     type: 'basic',
     clue: 'The temple here is closed, but you can still find a wealth of information just near the entrance.',
     question: 'They say this place is A \_\_\_\_\_ in the Middle of the City.',
-    image: 'fiveelements',
     answers: ['marsh'],
     webAnswer: true,
     hint: 'Look for an area near the entrance that has a roof, but only two walls.'
+  },
+  {
+    id: '511179de-5196-4c2d-98ee-054e3ee6fd86',
+    type: 'basic',
+    clue: 'Outside of the temple there is a small place where imagination is free to run wild and knowledge is passed on.',
+    question: 'This gift to all is thanks to what Troop?',
+    answers: ['14354'],
+    webAnswer: true,
+    hint: 'Go to the door of the temple, then look for another door very close to you.'
   },
   {
     id: '7205280c-56f8-4910-8cde-db69277f030b',
@@ -83,20 +91,29 @@ const clues = [
     webAnswer: true,
     hint: 'If only there was some way you could walk across the water to the middle of the lake.'
   },
+  // {
+  //   id: '90107dd1-fd11-453a-b4ea-c5b038aacb84',
+  //   type: 'basic',
+  //   clue: 'Legends tell of a benevolent Sorceress who once lived in this wooded sanctuary. They say she returns to assist those in need who are pure of heart. If the stories are true, she can be found outside in a place where voices are meant to be heard. Find her and ask for her aid.',
+  //   question: 'What is her name?',
+  //   answers: ['yentihw'],
+  //   webAnswer: true,
+  //   hint: 'This place is designed for many to see and hear.'
+  // },
   {
     id: 'c9fbc8bf-620a-4d29-b5fc-cbe77acb9ebf',
     type: 'basic',
-    clue: 'That place where you met your true love, though far from you now, there are many like it here.',
+    clue: 'A grand bazaar of amusements where you have met several of your closest friends, though far from you now, there are many like it here.',
     question: 'What is this place called?',
     answers: ['gamestop'],
     successMessage: '[34 W 66th St, Richfield, MN 55423](https://goo.gl/maps/urUjK9xuyW9orvpU9)',
     webAnswer: true,
-    hint: 'A market place for amusements, somewhere next to a rainbow.'
+    hint: 'It went by a different name long ago, though most have forgotten. The one which was nearest to you when you first arrived to this land, is accompanied by a rainbow all day and night.'
   },
   {
     id: 'cf6e3e8b-ab3d-494d-a912-f91f494c4e96',
     type: 'basic',
-    clue: 'Here in this grand bazaar of amusements awaits one of the three **keys** that will aid you in your quest. Worry not, brave hero...there are many in this land who would see to your success. ',
+    clue: 'Here awaits one of the three **keys** that will aid you in your quest. Worry not, brave hero...there are many in this land who would see to your success. ',
     question: 'See the store merchant and ask them for that which was left for you to **pick up**.\r\n\r\nEnter the barcode.',
     image: 'barcode',
     answers: ['711719519065'],
@@ -116,8 +133,8 @@ const clues = [
   {
     id: '2c2bf8ed-3e80-4da7-8d74-b6dce1f76b1a',
     type: 'basic',
-    clue: 'Your final **key** awaits you here. Speak with the merchant and tell them your name, they will have it for you in what they call a **pull box**. Since you are out there working hard trying to save the prince, this one is on the house.',
-    question: 'Confirm You have received it by entering the names of the two individuals represented on the front of the **key**',
+    clue: 'Your final **key** awaits you here. Speak with the merchant and tell them your name, they will have what you seek in what they call a **pull box**. Since you are out there working hard trying to save the prince, this one is on the house.',
+    question: 'Confirm You have received it by entering the names of the two heroes represented on the front of the **key**',
     answers: ['gambit', 'rogue'],
     webAnswer: true,
     hint: 'Try the Whistle in your inventory to call the Old Woman for help if you are having trouble.'
@@ -127,9 +144,8 @@ const clues = [
     type: 'gem-clue',
     clue: 'Now that you possess all three **keys**, you can enter the Echo Temple where you will find the gems. To enter the temple, you must return **Home** and carry with you all three artificacts. When you walk through the door, you will not be in your real home, but an echo of itself in another plane of existence. Prepare yourself for the final trial: **The Echo Temple**',
     question: 'Collect the three **magic gems** and enter them below',
-    answers: ['orange', 'lightblue', 'purple'],
-    successMessage: 'Congratulations! You have collected all of the magic gems and you are now ready to face the wizard and save the prince! Go forth brave hero, to the Evil Wizard\'s Tower!\r\n\r\n[821 S Marquette Ave, Minneapolis, MN 55402](https://goo.gl/maps/pXPHWCUb7yCcu2QJA)',
-    webAnswer: true,
+    answers: ['lightblue', 'purple', 'yellow'],
+    successMessage: 'Well done! You have collected all three of the magic gems and you are now ready to face the wizard and save the prince! To harness the power of the magic gems against the wizard, you must hold them out and recite these ancient words: Zip, Zap, Zop. Go forth brave hero, to the Evil Wizard\'s Tower!\r\n\r\n[821 S Marquette Ave, Minneapolis, MN 55402](https://goo.gl/maps/pXPHWCUb7yCcu2QJA)', webAnswer: true,
     hint: 'To answer this you must find Magic Gems within the Echo Temple.'
   }
 ]
