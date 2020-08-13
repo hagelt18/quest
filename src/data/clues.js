@@ -101,13 +101,13 @@ const clues = [
     image: 'barcode',
     answers: ['711719519065'],
     webAnswer: true,
-    hint: 'If you didn’t get something, try the Help Whistle in your inventory.'
+    hint: 'If you didn’t get something, try the Whistle in your inventory to call the Old Woman for help.'
   },
   {
     id: '75beaf1b-66d2-44a4-95fb-2867ebbae0c6',
     type: 'basic',
     clue: 'Nice work. There is yet one more **key** you must obtain. Lucky for you, it is very near. Like...if you were playing hot or cold, you could say you are **hot**.',
-    question: 'What numerals rest above the enterance?',
+    question: 'What numerals rest above the entrance?',
     answers: ['26'],
     webAnswer: true,
     successMessage: '[26 W 66th St, Richfield, MN 55423](https://goo.gl/maps/5YSNsk3ED3kuFtf87)',
@@ -120,7 +120,7 @@ const clues = [
     question: 'Confirm You have received it by entering the names of the two individuals represented on the front of the **key**',
     answers: ['gambit', 'rogue'],
     webAnswer: true,
-    hint: 'Try the Help Whistle in your inventory if you are having trouble.'
+    hint: 'Try the Whistle in your inventory to call the Old Woman for help if you are having trouble.'
   },
   {
     id: 'c1bf0873-02ad-4f14-8858-9fa25a8583f2',

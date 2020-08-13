@@ -96,7 +96,8 @@ function Home() {
       <div>
         {success && (
           <div>
-            <h2>DODEEDODODODOO</h2>
+            <h2>Well done!</h2>
+            <p>Look beneath a place where you might hear this song.</p>
             <StartContinue />
           </div>
         )}

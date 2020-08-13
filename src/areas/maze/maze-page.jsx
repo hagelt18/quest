@@ -55,11 +55,12 @@ function MazePage() {
   const handleNextMove = async (nextMove) => {
     setMoving(true);
     await delay(100);
-    const expectedMoves = [
-      'L', 'U', 'R', 'D',
-      'R', 'U', 'R', 'D',
-      'L', 'R', 'U', 'L',
-      'D', 'D', 'R', 'U'];
+    // const expectedMoves = [
+    //   'L', 'U',
+    //   'R', 'U', 'R',
+    //   'L', 'L', 'U', 'L',
+    //   'D', 'L', 'U'];
+    const expectedMoves = ['D', 'D', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'L', 'U'];
     const nextMoveIndex = moves.length;
 
     if (immediateDeath && expectedMoves[nextMoveIndex] !== nextMove) {
