@@ -58,7 +58,7 @@ const clues = [
   {
     id: '5aa10399-b215-4b90-bf48-49482790ab89',
     type: 'basic',
-    clue: 'The temple here is closed, but you can still find a wealth of information just near the entrance.',
+    clue: 'The temple here is closed, but you can still find a wealth of information about it just near the entrance.',
     question: 'They say this place is A \_\_\_\_\_ in the Middle of the City.',
     answers: ['marsh'],
     webAnswer: true,
@@ -72,6 +72,16 @@ const clues = [
     answers: ['14354'],
     webAnswer: true,
     hint: 'Go to the door of the temple, then look for another door very close to you.'
+  },
+  {
+    id: '511179de-5196-4c2d-98ee-054e3ee6fd86',
+    type: 'basic',
+    clue: 'Saving the Prince is pretty important and all, but maybe a short break wouldn\'t hurt, right?',
+    question: 'Which author could provide a quick little read?',
+    answers: ['donald', 'sobol'],
+    webAnswer: true,
+    successMessage: 'Try one out, they are pretty fun!',
+    hint: 'Look for something you could read in just two minutes.'
   },
   {
     id: '7205280c-56f8-4910-8cde-db69277f030b',
