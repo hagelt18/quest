@@ -5,7 +5,7 @@ import 'react-piano/dist/styles.css';
 import DimensionsProvider from './dimensions-provider';
 import Confetti from '../../components/confetti';
 import { useHistory } from 'react-router-dom';
-import { zeldaSecret, midiNumToNoteDictionary } from './songs';
+import { zeldaSecret, midiNumToNoteDictionary, zeldaFairyShort } from './songs';
 import { useEffect } from 'react';
 import StartContinue from '../../components/start-continue';
 import Inventory from '../../components/inventory';
@@ -95,9 +95,9 @@ function Home() {
       </div>
       <div>
         {success && (
-          <div>
-            <h2>Well done!</h2>
-            <p>Look beneath a place where you might hear this song.</p>
+          <div className="mt-2">
+            <p><strong>Well done!</strong></p>
+            <p>Look beneath a place where you might hear <button style={{ fontSize: '24px' }} onClick={() => { PlayNotes(zeldaFairyShort, 500) }}>this song</button>.</p>
             <StartContinue />
           </div>
         )}
