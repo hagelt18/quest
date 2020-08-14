@@ -74,7 +74,7 @@ const clues = [
     hint: 'Go to the door of the temple, then look for another door very close to you.'
   },
   {
-    id: '511179de-5196-4c2d-98ee-054e3ee6fd86',
+    id: 'd4396199-2c37-46b8-926e-fd3b5cc66745',
     type: 'basic',
     clue: 'Saving the Prince is pretty important and all, but maybe a short break wouldn\'t hurt, right?',
     question: 'Which author could provide a quick little read?',
