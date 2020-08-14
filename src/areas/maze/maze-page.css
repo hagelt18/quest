@@ -47,3 +47,14 @@
   margin-top: 20px;
   width: 54px;
 }
+
+.maze-screen {
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .maze-screen {
+    width: 300px;
+  }
+}
