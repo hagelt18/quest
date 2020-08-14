@@ -61,6 +61,7 @@ function MazePage() {
     //   'L', 'L', 'U', 'L',
     //   'D', 'L', 'U'];
     const expectedMoves = ['D', 'D', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'L', 'U'];
+    const expectedMovesAlt = ['U', 'U', 'L', 'R', 'L', 'U', 'L', 'L', 'R', 'L', 'R',];
     const nextMoveIndex = moves.length;
 
     if (immediateDeath && expectedMoves[nextMoveIndex] !== nextMove) {
@@ -71,7 +72,9 @@ function MazePage() {
     const newMoves = [...moves, nextMove];
     if (newMoves.length === expectedMoves.length) {
       // All Moves Correct
-      if (expectedMoves.every((m, i) => newMoves[i] === m)) {
+      var correct = expectedMoves.every((m, i) => newMoves[i] === m);
+      var altCorrect = expectedMovesAlt.every((m, i) => newMoves[i] === m);
+      if (correct || altCorrect) {
         setSuccess(true);
         PlayNotes(zeldaSecret, 130);
         const data = loadData();
