@@ -63,8 +63,9 @@ function MazePage() {
     const expectedMoves = ['D', 'D', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'L', 'U'];
     const expectedMovesAlt = ['U', 'U', 'L', 'R', 'L', 'U', 'L', 'L', 'R', 'L', 'R',];
     const nextMoveIndex = moves.length;
+    const nextMoveCorrect = expectedMoves[nextMoveIndex] !== nextMove || expectedMovesAlt[nextMoveIndex] !== nextMove
 
-    if (immediateDeath && expectedMoves[nextMoveIndex] !== nextMove) {
+    if (immediateDeath && nextMoveCorrect) {
       die();
       return;
     }

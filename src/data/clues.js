@@ -17,15 +17,15 @@ const clues = [
     webAnswer: true,
     hint: 'Name of your favorite place to go in the morning'
   },
-  {
-    id: '1f24fa80-6332-4ce6-87d8-cb00ce022226',
-    type: 'basic',
-    clue: 'A once a strong and proud warrior now reduced to a mere ornament. Remains defiled, she lost more than just her honor. ',
-    question: 'What was she?',
-    answers: ['bear'],
-    webAnswer: true,
-    hint: 'Animal'
-  },
+  // {
+  //   id: '1f24fa80-6332-4ce6-87d8-cb00ce022226',
+  //   type: 'basic',
+  //   clue: 'A once a strong and proud warrior now reduced to a mere ornament. Remains defiled, she lost more than just her honor. ',
+  //   question: 'What was she?',
+  //   answers: ['bear'],
+  //   webAnswer: true,
+  //   hint: 'Animal'
+  // },
   {
     id: 'f0266dbb-b101-4078-9954-a6df942f5831',
     type: 'basic',
