@@ -2,7 +2,7 @@
 import Talk from "talkjs";
 
 export const getHelpee = () => new Talk.User({
-  id: "123456",
+  id: "081388",
   name: "Hero",
   email: "hero@test.com",
   photoUrl: "https://i.imgur.com/9M8gvLW.png",
@@ -10,7 +10,7 @@ export const getHelpee = () => new Talk.User({
 });
 
 export const getHelper = () => new Talk.User({
-  id: "654321",
+  id: "081420",
   name: "Old Woman",
   email: "wisewoman@test.com",
   photoUrl: "https://i.imgur.com/urprSoj.png",
