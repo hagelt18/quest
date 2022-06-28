@@ -1,8 +1,8 @@
-Placeholder page for a future quest.
-
 https://hagelt18.github.io/quest/ 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application was created to be used along side several real world puzzles that ended with me proposing to my wife.
+
+
 
 ## Available Scripts
 
