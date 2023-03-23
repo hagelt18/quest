@@ -1,8 +1,12 @@
-Placeholder page for a future quest.
-
 https://hagelt18.github.io/quest/ 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application was created to be used along side several real world puzzles for my partner to solve as part of a birthday event. Each of her birthday gifts are gradually found along the way by following each clue to a new location. Several friends were enlisted to take on roles within the quest, some of which were suprises for her to encounter along the way. At the end of the quest, the prince who she set out to rescue (me) would end up proposing to her (finally 🙃)
+
+While anyone can interact with and use the application, the real world elements that were available for the original audience won't be available.
+
+All answers can be found here in the clue data:
+https://github.com/hagelt18/quest/blob/master/src/data/clues.jshttps://github.com/hagelt18/quest/blob/master/src/data/clues.js
+
 
 ## Available Scripts
 
